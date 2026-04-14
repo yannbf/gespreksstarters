@@ -1,4 +1,4 @@
-import { useState, useCallback, useEffect, useRef, useMemo } from 'react';
+import { useState, useCallback, useEffect, useLayoutEffect, useRef, useMemo } from 'react';
 import { motion, useMotionValue, useTransform, animate, type PanInfo } from 'framer-motion';
 import type { Theme } from '../data/cards';
 import Card from './Card';
@@ -35,7 +35,7 @@ export default function CardStack({ theme, favorites, onToggleFavorite, cardThem
   const absX = useTransform(x, (v) => Math.abs(v));
   const nextCardY = useTransform(absX, [0, 400], [8, 0]);
   const nextCardScale = useTransform(absX, [0, 400], [0.96, 1]);
-  const nextCardOpacity = useTransform(absX, [0, 400], [0.85, 1]);
+  const nextCardOpacity = useTransform(absX, [0, 400], [1, 1]);
 
   // Shuffle cards when theme changes; for favorites, react to card list changes
   const cards = useMemo(() => shuffle(theme.cards), [theme.id, theme.cards]);
@@ -54,7 +54,13 @@ export default function CardStack({ theme, favorites, onToggleFavorite, cardThem
     setCurrentIndex((prev) => Math.min(prev, Math.max(cards.length - 1, 0)));
   }, [cards.length]);
 
-  // Reset flip when card changes
+  // Reset flip and x position when card changes
+  // useLayoutEffect ensures x resets before the browser paints,
+  // preventing the background card from briefly jumping back to its resting position
+  useLayoutEffect(() => {
+    x.set(0);
+  }, [currentIndex, x]);
+
   useEffect(() => {
     setIsFlipped(false);
   }, [currentIndex]);
@@ -67,14 +73,13 @@ export default function CardStack({ theme, favorites, onToggleFavorite, cardThem
 
       const targetX = direction === 'left' ? -400 : 400;
       animate(x, targetX, {
-        type: 'spring',
-        stiffness: 300,
-        damping: 30,
+        type: 'tween',
+        duration: 0.25,
+        ease: 'easeIn',
         onComplete: () => {
           setCurrentIndex((prev) => prev + 1);
           setExitDirection(null);
           setIsAnimating(false);
-          x.set(0);
         },
       });
     },
@@ -247,7 +252,7 @@ export default function CardStack({ theme, favorites, onToggleFavorite, cardThem
                 animate={{
                   y: stackOffset,
                   scale: stackScale,
-                  opacity: 1 - i * 0.15,
+                  opacity: 1,
                 }}
                 transition={{ type: 'spring', stiffness: 300, damping: 25 }}
               >
