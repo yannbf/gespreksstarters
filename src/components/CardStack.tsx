@@ -18,7 +18,12 @@ export default function CardStack({ theme }: CardStackProps) {
 
   const x = useMotionValue(0);
   const rotate = useTransform(x, [-200, 200], [-20, 20]);
-  const opacity = useTransform(x, [-200, -100, 0, 100, 200], [0.5, 1, 1, 1, 0.5]);
+
+  // Background card reacts to how far the top card has been dragged
+  const absX = useTransform(x, (v) => Math.abs(v));
+  const nextCardY = useTransform(absX, [0, 400], [8, 0]);
+  const nextCardScale = useTransform(absX, [0, 400], [0.96, 1]);
+  const nextCardOpacity = useTransform(absX, [0, 400], [0.85, 1]);
 
   // Reset when theme changes
   useEffect(() => {
@@ -84,10 +89,20 @@ export default function CardStack({ theme }: CardStackProps) {
   }, [goToNext]);
 
   const handlePrevCard = useCallback(() => {
-    if (currentIndex > 0) {
+    if (currentIndex > 0 && !isAnimating) {
+      setIsAnimating(true);
       setCurrentIndex((prev) => prev - 1);
+      x.set(-400);
+      animate(x, 0, {
+        type: 'spring',
+        stiffness: 300,
+        damping: 30,
+        onComplete: () => {
+          setIsAnimating(false);
+        },
+      });
     }
-  }, [currentIndex]);
+  }, [currentIndex, isAnimating, x]);
 
   const handleShuffle = useCallback(() => {
     setCurrentIndex(0);
@@ -144,7 +159,6 @@ export default function CardStack({ theme }: CardStackProps) {
                   style={{
                     x,
                     rotate,
-                    opacity: exitDirection ? opacity : 1,
                     zIndex: 10 - i,
                     cursor: 'grab',
                   }}
@@ -156,6 +170,24 @@ export default function CardStack({ theme }: CardStackProps) {
                   whileTap={{ cursor: 'grabbing' }}
                 >
                   <Card card={card} theme={theme} isFlipped={isFlipped} />
+                </motion.div>
+              );
+            }
+
+            // First card behind the top card: driven by drag progress
+            if (i === 1) {
+              return (
+                <motion.div
+                  key={card.id}
+                  className="stack-card"
+                  style={{
+                    zIndex: 10 - i,
+                    y: nextCardY,
+                    scale: nextCardScale,
+                    opacity: nextCardOpacity,
+                  }}
+                >
+                  <Card card={card} theme={theme} isFlipped={false} />
                 </motion.div>
               );
             }
