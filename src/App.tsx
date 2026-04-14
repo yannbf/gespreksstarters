@@ -30,6 +30,14 @@ function saveFavorites(favorites: Set<string>) {
   localStorage.setItem('gespreksstarters-favorites', JSON.stringify([...favorites]));
 }
 
+// Map each card ID to its original theme for color/gradient lookup
+const cardThemeMap = new Map<string, Theme>();
+for (const t of themes) {
+  for (const c of t.cards) {
+    cardThemeMap.set(c.id, t);
+  }
+}
+
 function App() {
   const [activeThemeId, setActiveThemeId] = useState(themes[0].id);
   const [favorites, setFavorites] = useState<Set<string>>(loadFavorites);
@@ -83,6 +91,7 @@ function App() {
             theme={activeTheme}
             favorites={favorites}
             onToggleFavorite={handleToggleFavorite}
+            cardThemeMap={cardThemeMap}
           />
         </div>
       </main>

@@ -7,6 +7,7 @@ interface CardStackProps {
   theme: Theme;
   favorites: Set<string>;
   onToggleFavorite: (cardId: string) => void;
+  cardThemeMap?: Map<string, Theme>;
 }
 
 const SWIPE_THRESHOLD = 80;
@@ -20,7 +21,7 @@ function shuffle<T>(array: T[]): T[] {
   return shuffled;
 }
 
-export default function CardStack({ theme, favorites, onToggleFavorite }: CardStackProps) {
+export default function CardStack({ theme, favorites, onToggleFavorite, cardThemeMap }: CardStackProps) {
   const [currentIndex, setCurrentIndex] = useState(0);
   const [exitDirection, setExitDirection] = useState<'left' | 'right' | null>(null);
   const [isAnimating, setIsAnimating] = useState(false);
@@ -36,8 +37,8 @@ export default function CardStack({ theme, favorites, onToggleFavorite }: CardSt
   const nextCardScale = useTransform(absX, [0, 400], [0.96, 1]);
   const nextCardOpacity = useTransform(absX, [0, 400], [0.85, 1]);
 
-  // Shuffle cards when theme changes
-  const cards = useMemo(() => shuffle(theme.cards), [theme.id]);
+  // Shuffle cards when theme changes; for favorites, react to card list changes
+  const cards = useMemo(() => shuffle(theme.cards), [theme.id, theme.cards]);
 
   // Reset when theme changes
   useEffect(() => {
@@ -47,6 +48,11 @@ export default function CardStack({ theme, favorites, onToggleFavorite }: CardSt
     setIsFlipped(false);
     x.set(0);
   }, [theme.id, x]);
+
+  // Clamp currentIndex when cards array shrinks (e.g. unfavoriting in favorites view)
+  useEffect(() => {
+    setCurrentIndex((prev) => Math.min(prev, Math.max(cards.length - 1, 0)));
+  }, [cards.length]);
 
   // Reset flip when card changes
   useEffect(() => {
@@ -182,6 +188,7 @@ export default function CardStack({ theme, favorites, onToggleFavorite }: CardSt
             const stackOffset = i * 8;
             const stackScale = 1 - i * 0.04;
             const isFavorite = favorites.has(card.id);
+            const cardTheme = cardThemeMap?.get(card.id) ?? theme;
 
             if (isTop) {
               return (
@@ -203,7 +210,7 @@ export default function CardStack({ theme, favorites, onToggleFavorite }: CardSt
                 >
                   <Card
                     card={card}
-                    theme={theme}
+                    theme={cardTheme}
                     isFlipped={isFlipped}
                     isFavorite={isFavorite}
                     onToggleFavorite={onToggleFavorite}
@@ -225,7 +232,7 @@ export default function CardStack({ theme, favorites, onToggleFavorite }: CardSt
                     opacity: nextCardOpacity,
                   }}
                 >
-                  <Card card={card} theme={theme} isFlipped={false} isFavorite={isFavorite} onToggleFavorite={onToggleFavorite} />
+                  <Card card={card} theme={cardTheme} isFlipped={false} isFavorite={isFavorite} onToggleFavorite={onToggleFavorite} />
                 </motion.div>
               );
             }
@@ -244,7 +251,7 @@ export default function CardStack({ theme, favorites, onToggleFavorite }: CardSt
                 }}
                 transition={{ type: 'spring', stiffness: 300, damping: 25 }}
               >
-                <Card card={card} theme={theme} isFlipped={false} isFavorite={isFavorite} onToggleFavorite={onToggleFavorite} />
+                <Card card={card} theme={cardTheme} isFlipped={false} isFavorite={isFavorite} onToggleFavorite={onToggleFavorite} />
               </motion.div>
             );
           })
