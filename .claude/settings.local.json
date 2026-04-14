@@ -1,0 +1,16 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(npm install:*)",
+      "Bash(python3 /Users/yannbraga/.claude/skills/ui-ux-pro-max/scripts/search.py \"mobile card game playful colorful minimal modern\" --design-system -p \"Gespreksstarters\")",
+      "Bash(python3 /Users/yannbraga/.claude/skills/ui-ux-pro-max/scripts/search.py \"card swipe animation micro-interaction gesture\" --domain ux)",
+      "Bash(python3 /Users/yannbraga/.claude/skills/ui-ux-pro-max/scripts/search.py \"modern playful minimal colorful\" --domain style -n 5)",
+      "Bash(python3 /Users/yannbraga/.claude/skills/ui-ux-pro-max/scripts/search.py \"modern rounded friendly clean\" --domain typography -n 5)",
+      "Bash(python3 /Users/yannbraga/.claude/skills/ui-ux-pro-max/scripts/search.py \"animation spring gesture mobile\" --stack react)",
+      "Bash(npx --yes tsx -e ':*)",
+      "Bash(npx tsc:*)",
+      "mcp__Claude_Preview__preview_start",
+      "Bash(npx vite:*)"
+    ]
+  }
+}
