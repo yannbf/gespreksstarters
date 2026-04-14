@@ -1,13 +1,16 @@
 import { motion } from 'framer-motion';
 import type { Card as CardType, Theme } from '../data/cards';
+import FavoriteButton from './FavoriteButton';
 
 interface CardProps {
   card: CardType;
   theme: Theme;
   isFlipped: boolean;
+  isFavorite?: boolean;
+  onToggleFavorite?: (cardId: string) => void;
 }
 
-export default function Card({ card, theme, isFlipped }: CardProps) {
+export default function Card({ card, theme, isFlipped, isFavorite, onToggleFavorite }: CardProps) {
   return (
     <div className="card-container">
       <motion.div
@@ -27,7 +30,15 @@ export default function Card({ card, theme, isFlipped }: CardProps) {
             <div className="card-circle card-circle-3" />
           </div>
           <div className="card-content">
-            <span className="card-theme-badge">{theme.emoji} {theme.name}</span>
+            <div className="card-top-row">
+              <span className="card-theme-badge">{theme.emoji} {theme.name}</span>
+              {onToggleFavorite && (
+                <FavoriteButton
+                  isFavorite={!!isFavorite}
+                  onToggle={() => onToggleFavorite(card.id)}
+                />
+              )}
+            </div>
             <p className="card-text">{card.dutch}</p>
             <span className="card-hint">Tik om te vertalen</span>
           </div>
@@ -45,9 +56,16 @@ export default function Card({ card, theme, isFlipped }: CardProps) {
             <div className="card-circle card-circle-2" style={{ opacity: 0.04 }} />
           </div>
           <div className="card-content">
-            <span className="card-theme-badge card-theme-badge-back">
-              English
-            </span>
+            <div className="card-top-row">
+              <span className="card-theme-badge card-theme-badge-back">English</span>
+              {onToggleFavorite && (
+                <FavoriteButton
+                  isFavorite={!!isFavorite}
+                  onToggle={() => onToggleFavorite(card.id)}
+                  variant="back"
+                />
+              )}
+            </div>
             <p className="card-text">{card.english}</p>
             <span className="card-hint card-hint-back">Tap to flip back</span>
           </div>

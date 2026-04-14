@@ -1,12 +1,61 @@
-import { useState } from 'react';
+import { useState, useCallback, useMemo } from 'react';
 import { motion } from 'framer-motion';
 import { themes } from './data/cards';
+import type { Theme } from './data/cards';
 import ThemeSelector from './components/ThemeSelector';
 import CardStack from './components/CardStack';
 import './App.css';
 
+const FAVORITES_THEME_ID = 'favorites';
+
+const favoritesThemeBase: Theme = {
+  id: FAVORITES_THEME_ID,
+  name: 'Favorieten',
+  emoji: '❤️',
+  color: '#ef4444',
+  gradient: 'linear-gradient(135deg, #ef4444 0%, #ec4899 50%, #f472b6 100%)',
+  cards: [],
+};
+
+function loadFavorites(): Set<string> {
+  try {
+    const stored = localStorage.getItem('gespreksstarters-favorites');
+    return stored ? new Set(JSON.parse(stored)) : new Set();
+  } catch {
+    return new Set();
+  }
+}
+
+function saveFavorites(favorites: Set<string>) {
+  localStorage.setItem('gespreksstarters-favorites', JSON.stringify([...favorites]));
+}
+
 function App() {
-  const [activeTheme, setActiveTheme] = useState(themes[0]);
+  const [activeThemeId, setActiveThemeId] = useState(themes[0].id);
+  const [favorites, setFavorites] = useState<Set<string>>(loadFavorites);
+
+  // Build favorites theme with cards from all themes
+  const favoritesTheme = useMemo(() => {
+    const allCards = themes.flatMap((t) => t.cards);
+    const favCards = allCards.filter((c) => favorites.has(c.id));
+    return { ...favoritesThemeBase, cards: favCards };
+  }, [favorites]);
+
+  const allThemes = useMemo(() => [...themes, favoritesTheme], [favoritesTheme]);
+  const activeTheme = allThemes.find((t) => t.id === activeThemeId) ?? themes[0];
+
+  const handleToggleFavorite = useCallback((cardId: string) => {
+    setFavorites((prev) => {
+      const next = new Set(prev);
+      if (next.has(cardId)) {
+        next.delete(cardId);
+      } else {
+        next.add(cardId);
+      }
+      saveFavorites(next);
+      return next;
+    });
+  }, []);
 
   return (
     <div className="app">
@@ -23,14 +72,18 @@ function App() {
       </header>
 
       <ThemeSelector
-        themes={themes}
+        themes={allThemes}
         activeTheme={activeTheme}
-        onSelect={setActiveTheme}
+        onSelect={(t) => setActiveThemeId(t.id)}
       />
 
       <main className="app-main">
         <div className="app-card-area">
-          <CardStack theme={activeTheme} />
+          <CardStack
+            theme={activeTheme}
+            favorites={favorites}
+            onToggleFavorite={handleToggleFavorite}
+          />
         </div>
       </main>
     </div>

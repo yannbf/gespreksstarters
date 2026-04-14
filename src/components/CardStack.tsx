@@ -1,15 +1,26 @@
-import { useState, useCallback, useEffect, useRef } from 'react';
+import { useState, useCallback, useEffect, useRef, useMemo } from 'react';
 import { motion, useMotionValue, useTransform, animate, type PanInfo } from 'framer-motion';
 import type { Theme } from '../data/cards';
 import Card from './Card';
 
 interface CardStackProps {
   theme: Theme;
+  favorites: Set<string>;
+  onToggleFavorite: (cardId: string) => void;
 }
 
 const SWIPE_THRESHOLD = 80;
 
-export default function CardStack({ theme }: CardStackProps) {
+function shuffle<T>(array: T[]): T[] {
+  const shuffled = [...array];
+  for (let i = shuffled.length - 1; i > 0; i--) {
+    const j = Math.floor(Math.random() * (i + 1));
+    [shuffled[i], shuffled[j]] = [shuffled[j], shuffled[i]];
+  }
+  return shuffled;
+}
+
+export default function CardStack({ theme, favorites, onToggleFavorite }: CardStackProps) {
   const [currentIndex, setCurrentIndex] = useState(0);
   const [exitDirection, setExitDirection] = useState<'left' | 'right' | null>(null);
   const [isAnimating, setIsAnimating] = useState(false);
@@ -25,6 +36,9 @@ export default function CardStack({ theme }: CardStackProps) {
   const nextCardScale = useTransform(absX, [0, 400], [0.96, 1]);
   const nextCardOpacity = useTransform(absX, [0, 400], [0.85, 1]);
 
+  // Shuffle cards when theme changes
+  const cards = useMemo(() => shuffle(theme.cards), [theme.id]);
+
   // Reset when theme changes
   useEffect(() => {
     setCurrentIndex(0);
@@ -38,8 +52,6 @@ export default function CardStack({ theme }: CardStackProps) {
   useEffect(() => {
     setIsFlipped(false);
   }, [currentIndex]);
-
-  const cards = theme.cards;
 
   const goToNext = useCallback(
     (direction: 'left' | 'right') => {
@@ -76,9 +88,10 @@ export default function CardStack({ theme }: CardStackProps) {
     [goToNext, x]
   );
 
-  const handleTap = useCallback(() => {
-    // Only flip if it wasn't a drag
-    if (Math.abs(dragOffset.current) < 5) {
+  const handleClick = useCallback((event: { target: EventTarget | null }) => {
+    const target = event.target as HTMLElement;
+    // Only flip if it wasn't a drag and not a favorite click
+    if (Math.abs(dragOffset.current) < 5 && !target.closest('.card-favorite-btn')) {
       setIsFlipped((prev) => !prev);
     }
     dragOffset.current = 0;
@@ -108,6 +121,24 @@ export default function CardStack({ theme }: CardStackProps) {
     setCurrentIndex(0);
     x.set(0);
   }, [x]);
+
+  // Empty favorites state
+  if (cards.length === 0) {
+    return (
+      <div className="stack-empty">
+        <motion.div
+          className="stack-empty-content"
+          initial={{ scale: 0.8, opacity: 0 }}
+          animate={{ scale: 1, opacity: 1 }}
+          transition={{ type: 'spring', stiffness: 200, damping: 20 }}
+        >
+          <span className="stack-empty-icon">❤️</span>
+          <h2>Nog geen favorieten</h2>
+          <p>Tik op het hartje bij een kaart om hem hier te bewaren.</p>
+        </motion.div>
+      </div>
+    );
+  }
 
   if (currentIndex >= cards.length) {
     return (
@@ -150,6 +181,7 @@ export default function CardStack({ theme }: CardStackProps) {
             const isTop = i === 0;
             const stackOffset = i * 8;
             const stackScale = 1 - i * 0.04;
+            const isFavorite = favorites.has(card.id);
 
             if (isTop) {
               return (
@@ -166,10 +198,16 @@ export default function CardStack({ theme }: CardStackProps) {
                   dragConstraints={{ left: 0, right: 0 }}
                   dragElastic={0.8}
                   onDragEnd={handleDragEnd}
-                  onTap={handleTap}
+                  onClick={handleClick}
                   whileTap={{ cursor: 'grabbing' }}
                 >
-                  <Card card={card} theme={theme} isFlipped={isFlipped} />
+                  <Card
+                    card={card}
+                    theme={theme}
+                    isFlipped={isFlipped}
+                    isFavorite={isFavorite}
+                    onToggleFavorite={onToggleFavorite}
+                  />
                 </motion.div>
               );
             }
@@ -187,7 +225,7 @@ export default function CardStack({ theme }: CardStackProps) {
                     opacity: nextCardOpacity,
                   }}
                 >
-                  <Card card={card} theme={theme} isFlipped={false} />
+                  <Card card={card} theme={theme} isFlipped={false} isFavorite={isFavorite} onToggleFavorite={onToggleFavorite} />
                 </motion.div>
               );
             }
@@ -206,7 +244,7 @@ export default function CardStack({ theme }: CardStackProps) {
                 }}
                 transition={{ type: 'spring', stiffness: 300, damping: 25 }}
               >
-                <Card card={card} theme={theme} isFlipped={false} />
+                <Card card={card} theme={theme} isFlipped={false} isFavorite={isFavorite} onToggleFavorite={onToggleFavorite} />
               </motion.div>
             );
           })
@@ -227,12 +265,13 @@ export default function CardStack({ theme }: CardStackProps) {
         </motion.button>
 
         <span className="stack-counter">
-          {currentIndex + 1} / {cards.length}
+          {Math.min(currentIndex + 1, cards.length)} / {cards.length}
         </span>
 
         <motion.button
           className="control-button"
           onClick={handleNextButton}
+          disabled={currentIndex >= cards.length}
           whileTap={{ scale: 0.9 }}
           style={{ background: theme.gradient, color: '#fff', borderColor: 'transparent' }}
           aria-label="Volgende kaart"

@@ -270,6 +270,29 @@
   color: rgba(255, 255, 255, 0.4);
 }
 
+.card-top-row {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  position: relative;
+}
+
+.card-favorite-btn {
+  position: absolute;
+  right: -20px;
+  top: -20px;
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  -webkit-tap-highlight-color: transparent;
+  z-index: 2;
+}
+
 /* --- Stack Controls --- */
 .stack-controls {
   display: flex;
