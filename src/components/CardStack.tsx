@@ -23,7 +23,6 @@ function shuffle<T>(array: T[]): T[] {
 
 export default function CardStack({ theme, favorites, onToggleFavorite, cardThemeMap }: CardStackProps) {
   const [currentIndex, setCurrentIndex] = useState(0);
-  const [exitDirection, setExitDirection] = useState<'left' | 'right' | null>(null);
   const [isAnimating, setIsAnimating] = useState(false);
   const [isFlipped, setIsFlipped] = useState(false);
   const dragOffset = useRef(0);
@@ -43,7 +42,7 @@ export default function CardStack({ theme, favorites, onToggleFavorite, cardThem
   // Reset when theme changes
   useEffect(() => {
     setCurrentIndex(0);
-    setExitDirection(null);
+
     setIsAnimating(false);
     setIsFlipped(false);
     x.set(0);
@@ -69,7 +68,7 @@ export default function CardStack({ theme, favorites, onToggleFavorite, cardThem
     (direction: 'left' | 'right') => {
       if (isAnimating || currentIndex >= cards.length) return;
       setIsAnimating(true);
-      setExitDirection(direction);
+
 
       const targetX = direction === 'left' ? -400 : 400;
       animate(x, targetX, {
@@ -78,7 +77,7 @@ export default function CardStack({ theme, favorites, onToggleFavorite, cardThem
         ease: 'easeIn',
         onComplete: () => {
           setCurrentIndex((prev) => prev + 1);
-          setExitDirection(null);
+      
           setIsAnimating(false);
         },
       });
