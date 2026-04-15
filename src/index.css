@@ -26,7 +26,8 @@
   -webkit-text-size-adjust: 100%;
 }
 
-@media (prefers-color-scheme: dark) {
+/*** If we ever want light mode back, not sure though */
+/* @media (prefers-color-scheme: dark) { */
   :root {
     --bg: #0f0f14;
     --surface: #1a1a24;
@@ -36,7 +37,7 @@
     --border: #2a2a3a;
     --border-hover: #3a3a4a;
   }
-}
+/* } */
 
 *,
 *::before,
