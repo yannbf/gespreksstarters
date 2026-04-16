@@ -1,6 +1,16 @@
 import { motion } from 'framer-motion';
+import { useTranslation } from 'react-i18next';
 import type { Card as CardType, Theme } from '../data/cards';
 import FavoriteButton from './FavoriteButton';
+import type { LanguageCode } from './languages';
+
+const langToField: Record<LanguageCode, keyof CardType> = {
+  nl: 'dutch',
+  en: 'english',
+  pt: 'portuguese',
+  fr: 'french',
+  es: 'spanish',
+};
 
 interface CardProps {
   card: CardType;
@@ -8,9 +18,16 @@ interface CardProps {
   isFlipped: boolean;
   isFavorite?: boolean;
   onToggleFavorite?: (cardId: string) => void;
+  fromLang?: LanguageCode;
+  toLang?: LanguageCode;
 }
 
-export default function Card({ card, theme, isFlipped, isFavorite, onToggleFavorite }: CardProps) {
+export default function Card({ card, theme, isFlipped, isFavorite, onToggleFavorite, fromLang = 'nl', toLang = 'en' }: CardProps) {
+  const { t } = useTranslation();
+  const frontText = card[langToField[fromLang]] ?? card.dutch;
+  const backText = card[langToField[toLang]] ?? card.english;
+  const themeName = t(`themes.${theme.id}`, theme.name);
+
   return (
     <div className="card-container">
       <motion.div
@@ -19,7 +36,7 @@ export default function Card({ card, theme, isFlipped, isFavorite, onToggleFavor
         transition={{ duration: 0.5, type: 'spring', stiffness: 300, damping: 30 }}
         style={{ transformStyle: 'preserve-3d' }}
       >
-        {/* Front - Dutch */}
+        {/* Front */}
         <div
           className="card-face card-front"
           style={{ background: theme.gradient }}
@@ -31,7 +48,7 @@ export default function Card({ card, theme, isFlipped, isFavorite, onToggleFavor
           </div>
           <div className="card-content">
             <div className="card-top-row">
-              <span className="card-theme-badge">{theme.emoji} {theme.name}</span>
+              <span className="card-theme-badge">{theme.emoji} {themeName}</span>
               {onToggleFavorite && (
                 <FavoriteButton
                   isFavorite={!!isFavorite}
@@ -39,12 +56,12 @@ export default function Card({ card, theme, isFlipped, isFavorite, onToggleFavor
                 />
               )}
             </div>
-            <p className="card-text">{card.dutch}</p>
-            <span className="card-hint">Tik om te vertalen</span>
+            <p className="card-text">{frontText}</p>
+            <span className="card-hint">{t('tapToTranslate')}</span>
           </div>
         </div>
 
-        {/* Back - English */}
+        {/* Back */}
         <div
           className="card-face card-back"
           style={{
@@ -57,7 +74,7 @@ export default function Card({ card, theme, isFlipped, isFavorite, onToggleFavor
           </div>
           <div className="card-content">
             <div className="card-top-row">
-              <span className="card-theme-badge card-theme-badge-back">English</span>
+              <span className="card-theme-badge card-theme-badge-back">{themeName}</span>
               {onToggleFavorite && (
                 <FavoriteButton
                   isFavorite={!!isFavorite}
@@ -66,8 +83,8 @@ export default function Card({ card, theme, isFlipped, isFavorite, onToggleFavor
                 />
               )}
             </div>
-            <p className="card-text">{card.english}</p>
-            <span className="card-hint card-hint-back">Tap to flip back</span>
+            <p className="card-text">{backText}</p>
+            <span className="card-hint card-hint-back">{t('tapToFlipBack')}</span>
           </div>
         </div>
       </motion.div>

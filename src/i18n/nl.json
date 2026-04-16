@@ -1,0 +1,26 @@
+{
+  "appTitle": "Gespreksstarters",
+  "appSubtitle": "Tik op een kaart om de vertaling te zien",
+  "tapToTranslate": "Tik om te vertalen",
+  "tapToFlipBack": "Tik om terug te draaien",
+  "noFavorites": "Nog geen favorieten",
+  "noFavoritesHint": "Tik op het hartje bij een kaart om hem hier te bewaren.",
+  "allDone": "Allemaal gehad!",
+  "allDoneHint": "Je hebt alle kaarten in dit thema gezien.",
+  "playAgain": "Opnieuw spelen",
+  "languages": "Talen",
+  "from": "Van",
+  "to": "Naar",
+  "prevCard": "Vorige kaart",
+  "nextCard": "Volgende kaart",
+  "changeLanguage": "Taal wijzigen",
+  "favorites": "Favorieten",
+  "themes": {
+    "luchtig": "Luchtig",
+    "diepgaand": "Diepgaand",
+    "relaties": "Relaties",
+    "dromen": "Dromen & Doelen",
+    "herinneringen": "Herinneringen",
+    "zou-je-liever": "Zou je liever"
+  }
+}

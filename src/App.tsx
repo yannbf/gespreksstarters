@@ -1,9 +1,14 @@
 import { useState, useCallback, useMemo } from 'react';
 import { motion } from 'framer-motion';
+import { useTranslation } from 'react-i18next';
 import { themes } from './data/cards';
 import type { Theme } from './data/cards';
 import ThemeSelector from './components/ThemeSelector';
 import CardStack from './components/CardStack';
+import LanguageModal from './components/LanguageModal';
+import Flag from './components/Flags';
+import type { LanguageCode } from './components/languages';
+import './i18n';
 import './App.css';
 
 const FAVORITES_THEME_ID = 'favorites';
@@ -38,9 +43,28 @@ for (const t of themes) {
   }
 }
 
+function loadLanguages(): { from: LanguageCode; to: LanguageCode } {
+  try {
+    const stored = localStorage.getItem('gespreksstarters-languages');
+    if (stored) {
+      const parsed = JSON.parse(stored);
+      return { from: parsed.from ?? 'nl', to: parsed.to ?? 'en' };
+    }
+  } catch { /* ignore */ }
+  return { from: 'nl', to: 'en' };
+}
+
+function saveLanguages(from: LanguageCode, to: LanguageCode) {
+  localStorage.setItem('gespreksstarters-languages', JSON.stringify({ from, to }));
+}
+
 function App() {
+  const { t, i18n } = useTranslation();
   const [activeThemeId, setActiveThemeId] = useState(themes[0].id);
   const [favorites, setFavorites] = useState<Set<string>>(loadFavorites);
+  const [langModalOpen, setLangModalOpen] = useState(false);
+  const [fromLang, setFromLang] = useState<LanguageCode>(() => loadLanguages().from);
+  const [toLang, setToLang] = useState<LanguageCode>(() => loadLanguages().to);
 
   // Build favorites theme with cards from all themes
   const favoritesTheme = useMemo(() => {
@@ -51,6 +75,24 @@ function App() {
 
   const allThemes = useMemo(() => [...themes, favoritesTheme], [favoritesTheme]);
   const activeTheme = allThemes.find((t) => t.id === activeThemeId) ?? themes[0];
+
+  const handleFromChange = useCallback((code: LanguageCode) => {
+    setFromLang(code);
+    saveLanguages(code, toLang);
+    i18n.changeLanguage(code);
+  }, [toLang, i18n]);
+
+  const handleToChange = useCallback((code: LanguageCode) => {
+    setToLang(code);
+    saveLanguages(fromLang, code);
+  }, [fromLang]);
+
+  const handleSwapLangs = useCallback(() => {
+    setFromLang(toLang);
+    setToLang(fromLang);
+    saveLanguages(toLang, fromLang);
+    i18n.changeLanguage(toLang);
+  }, [fromLang, toLang, i18n]);
 
   const handleToggleFavorite = useCallback((cardId: string) => {
     setFavorites((prev) => {
@@ -68,16 +110,37 @@ function App() {
   return (
     <div className="app">
       <header className="app-header">
-        <motion.h1
-          className="app-title"
-          initial={{ opacity: 0, y: -20 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ type: 'spring', stiffness: 200, damping: 20 }}
-        >
-          Gespreksstarters
-        </motion.h1>
-        <p className="app-subtitle">Tik op een kaart om de vertaling te zien</p>
+        <div className="app-header-row">
+          <div className="app-header-spacer" />
+          <motion.h1
+            className="app-title"
+            initial={{ opacity: 0, y: -20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ type: 'spring', stiffness: 200, damping: 20 }}
+          >
+            {t('appTitle')}
+          </motion.h1>
+          <motion.button
+            className="lang-button"
+            onClick={() => setLangModalOpen(true)}
+            whileTap={{ scale: 0.9 }}
+            aria-label={t('changeLanguage')}
+          >
+            <Flag code={fromLang} size={22} />
+          </motion.button>
+        </div>
+        <p className="app-subtitle">{t('appSubtitle')}</p>
       </header>
+
+      <LanguageModal
+        isOpen={langModalOpen}
+        onClose={() => setLangModalOpen(false)}
+        fromLang={fromLang}
+        toLang={toLang}
+        onFromChange={handleFromChange}
+        onToChange={handleToChange}
+        onSwap={handleSwapLangs}
+      />
 
       <ThemeSelector
         themes={allThemes}
@@ -88,10 +151,13 @@ function App() {
       <main className="app-main">
         <div className="app-card-area">
           <CardStack
+            key={activeTheme.id}
             theme={activeTheme}
             favorites={favorites}
             onToggleFavorite={handleToggleFavorite}
             cardThemeMap={cardThemeMap}
+            fromLang={fromLang}
+            toLang={toLang}
           />
         </div>
       </main>

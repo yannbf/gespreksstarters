@@ -1,4 +1,5 @@
 import { motion } from 'framer-motion';
+import { useTranslation } from 'react-i18next';
 import type { Theme } from '../data/cards';
 
 interface ThemeSelectorProps {
@@ -8,11 +9,16 @@ interface ThemeSelectorProps {
 }
 
 export default function ThemeSelector({ themes, activeTheme, onSelect }: ThemeSelectorProps) {
+  const { t } = useTranslation();
+
   return (
     <div className="theme-selector">
       <div className="theme-pills">
         {themes.map((theme) => {
           const isActive = theme.id === activeTheme.id;
+          const displayName = theme.id === 'favorites'
+            ? t('favorites')
+            : t(`themes.${theme.id}`, theme.name);
           return (
             <motion.button
               key={theme.id}
@@ -26,7 +32,7 @@ export default function ThemeSelector({ themes, activeTheme, onSelect }: ThemeSe
               }
             >
               <span className="theme-pill-emoji">{theme.emoji}</span>
-              <span className="theme-pill-name">{theme.name}</span>
+              <span className="theme-pill-name">{displayName}</span>
               {isActive && (
                 <motion.div
                   className="theme-pill-indicator"

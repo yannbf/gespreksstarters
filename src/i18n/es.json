@@ -1,0 +1,26 @@
+{
+  "appTitle": "Temas de Conversación",
+  "appSubtitle": "Toca una carta para ver la traducción",
+  "tapToTranslate": "Toca para traducir",
+  "tapToFlipBack": "Toca para volver",
+  "noFavorites": "Sin favoritos aún",
+  "noFavoritesHint": "Toca el corazón en una carta para guardarla aquí.",
+  "allDone": "¡Listo!",
+  "allDoneHint": "Has visto todas las cartas de este tema.",
+  "playAgain": "Jugar de nuevo",
+  "languages": "Idiomas",
+  "from": "De",
+  "to": "A",
+  "prevCard": "Carta anterior",
+  "nextCard": "Siguiente carta",
+  "changeLanguage": "Cambiar idioma",
+  "favorites": "Favoritos",
+  "themes": {
+    "luchtig": "Ligero",
+    "diepgaand": "Profundo",
+    "relaties": "Relaciones",
+    "dromen": "Sueños y Metas",
+    "herinneringen": "Recuerdos",
+    "zou-je-liever": "Preferirías"
+  }
+}

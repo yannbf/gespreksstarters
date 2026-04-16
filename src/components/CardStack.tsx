@@ -1,6 +1,8 @@
-import { useState, useCallback, useEffect, useLayoutEffect, useRef, useMemo } from 'react';
+import { useState, useCallback, useLayoutEffect, useMemo, useRef } from 'react';
 import { motion, useMotionValue, useTransform, animate, type PanInfo } from 'framer-motion';
+import { useTranslation } from 'react-i18next';
 import type { Theme } from '../data/cards';
+import type { LanguageCode } from './languages';
 import Card from './Card';
 
 interface CardStackProps {
@@ -8,6 +10,8 @@ interface CardStackProps {
   favorites: Set<string>;
   onToggleFavorite: (cardId: string) => void;
   cardThemeMap?: Map<string, Theme>;
+  fromLang?: LanguageCode;
+  toLang?: LanguageCode;
 }
 
 const SWIPE_THRESHOLD = 80;
@@ -21,7 +25,8 @@ function shuffle<T>(array: T[]): T[] {
   return shuffled;
 }
 
-export default function CardStack({ theme, favorites, onToggleFavorite, cardThemeMap }: CardStackProps) {
+export default function CardStack({ theme, favorites, onToggleFavorite, cardThemeMap, fromLang, toLang }: CardStackProps) {
+  const { t } = useTranslation();
   const [currentIndex, setCurrentIndex] = useState(0);
   const [isAnimating, setIsAnimating] = useState(false);
   const [isFlipped, setIsFlipped] = useState(false);
@@ -36,39 +41,29 @@ export default function CardStack({ theme, favorites, onToggleFavorite, cardThem
   const nextCardScale = useTransform(absX, [0, 400], [0.96, 1]);
   const nextCardOpacity = useTransform(absX, [0, 400], [1, 1]);
 
-  // Shuffle cards when theme changes; for favorites, react to card list changes
-  const cards = useMemo(() => shuffle(theme.cards), [theme.id, theme.cards]);
+  // Shuffle cards; component remounts on theme change via key={theme.id} in parent
+  const cards = useMemo(() => shuffle(theme.cards), [theme.cards]);
 
-  // Reset when theme changes
-  useEffect(() => {
-    setCurrentIndex(0);
+  // Clamp index when cards shrink (e.g. unfavoriting in favorites view)
+  const effectiveIndex = Math.min(currentIndex, Math.max(cards.length - 1, 0));
 
-    setIsAnimating(false);
-    setIsFlipped(false);
-    x.set(0);
-  }, [theme.id, x]);
+  // Track last rendered index to reset x via useLayoutEffect
+  const lastRenderedIndex = useRef(0);
 
-  // Clamp currentIndex when cards array shrinks (e.g. unfavoriting in favorites view)
-  useEffect(() => {
-    setCurrentIndex((prev) => Math.min(prev, Math.max(cards.length - 1, 0)));
-  }, [cards.length]);
-
-  // Reset flip and x position when card changes
   // useLayoutEffect ensures x resets before the browser paints,
   // preventing the background card from briefly jumping back to its resting position
   useLayoutEffect(() => {
-    x.set(0);
-  }, [currentIndex, x]);
-
-  useEffect(() => {
-    setIsFlipped(false);
-  }, [currentIndex]);
+    if (lastRenderedIndex.current !== effectiveIndex) {
+      lastRenderedIndex.current = effectiveIndex;
+      x.set(0);
+    }
+  }, [effectiveIndex, x]);
 
   const goToNext = useCallback(
     (direction: 'left' | 'right') => {
-      if (isAnimating || currentIndex >= cards.length) return;
+      if (isAnimating || effectiveIndex >= cards.length) return;
       setIsAnimating(true);
-
+      setIsFlipped(false);
 
       const targetX = direction === 'left' ? -400 : 400;
       animate(x, targetX, {
@@ -77,12 +72,11 @@ export default function CardStack({ theme, favorites, onToggleFavorite, cardThem
         ease: 'easeIn',
         onComplete: () => {
           setCurrentIndex((prev) => prev + 1);
-      
           setIsAnimating(false);
         },
       });
     },
-    [isAnimating, currentIndex, cards.length, x]
+    [isAnimating, effectiveIndex, cards.length, x]
   );
 
   const handleDragEnd = useCallback(
@@ -108,14 +102,15 @@ export default function CardStack({ theme, favorites, onToggleFavorite, cardThem
   }, []);
 
   const handleNextButton = useCallback(() => {
-    goToNext('left');
+    goToNext('right');
   }, [goToNext]);
 
   const handlePrevCard = useCallback(() => {
-    if (currentIndex > 0 && !isAnimating) {
+    if (effectiveIndex > 0 && !isAnimating) {
       setIsAnimating(true);
+      setIsFlipped(false);
       setCurrentIndex((prev) => prev - 1);
-      x.set(-400);
+      x.set(400);
       animate(x, 0, {
         type: 'spring',
         stiffness: 300,
@@ -125,7 +120,7 @@ export default function CardStack({ theme, favorites, onToggleFavorite, cardThem
         },
       });
     }
-  }, [currentIndex, isAnimating, x]);
+  }, [effectiveIndex, isAnimating, x]);
 
   const handleShuffle = useCallback(() => {
     setCurrentIndex(0);
@@ -143,14 +138,14 @@ export default function CardStack({ theme, favorites, onToggleFavorite, cardThem
           transition={{ type: 'spring', stiffness: 200, damping: 20 }}
         >
           <span className="stack-empty-icon">❤️</span>
-          <h2>Nog geen favorieten</h2>
-          <p>Tik op het hartje bij een kaart om hem hier te bewaren.</p>
+          <h2>{t('noFavorites')}</h2>
+          <p>{t('noFavoritesHint')}</p>
         </motion.div>
       </div>
     );
   }
 
-  if (currentIndex >= cards.length) {
+  if (effectiveIndex >= cards.length) {
     return (
       <div className="stack-empty">
         <motion.div
@@ -160,8 +155,8 @@ export default function CardStack({ theme, favorites, onToggleFavorite, cardThem
           transition={{ type: 'spring', stiffness: 200, damping: 20 }}
         >
           <span className="stack-empty-icon">🎉</span>
-          <h2>Allemaal gehad!</h2>
-          <p>Je hebt alle kaarten in dit thema gezien.</p>
+          <h2>{t('allDone')}</h2>
+          <p>{t('allDoneHint')}</p>
           <motion.button
             className="shuffle-button"
             onClick={handleShuffle}
@@ -173,7 +168,7 @@ export default function CardStack({ theme, favorites, onToggleFavorite, cardThem
               <polyline points="23 20 23 14 17 14" />
               <path d="M20.49 9A9 9 0 0 0 5.64 5.64L1 10m22 4l-4.64 4.36A9 9 0 0 1 3.51 15" />
             </svg>
-            Opnieuw spelen
+            {t('playAgain')}
           </motion.button>
         </motion.div>
       </div>
@@ -181,7 +176,7 @@ export default function CardStack({ theme, favorites, onToggleFavorite, cardThem
   }
 
   // Show up to 3 stacked cards
-  const visibleCards = cards.slice(currentIndex, currentIndex + 3);
+  const visibleCards = cards.slice(effectiveIndex, effectiveIndex + 3);
 
   return (
     <div className="stack-wrapper">
@@ -218,6 +213,8 @@ export default function CardStack({ theme, favorites, onToggleFavorite, cardThem
                     isFlipped={isFlipped}
                     isFavorite={isFavorite}
                     onToggleFavorite={onToggleFavorite}
+                    fromLang={fromLang}
+                    toLang={toLang}
                   />
                 </motion.div>
               );
@@ -236,7 +233,7 @@ export default function CardStack({ theme, favorites, onToggleFavorite, cardThem
                     opacity: nextCardOpacity,
                   }}
                 >
-                  <Card card={card} theme={cardTheme} isFlipped={false} isFavorite={isFavorite} onToggleFavorite={onToggleFavorite} />
+                  <Card card={card} theme={cardTheme} isFlipped={false} isFavorite={isFavorite} onToggleFavorite={onToggleFavorite} fromLang={fromLang} toLang={toLang} />
                 </motion.div>
               );
             }
@@ -266,9 +263,9 @@ export default function CardStack({ theme, favorites, onToggleFavorite, cardThem
         <motion.button
           className="control-button"
           onClick={handlePrevCard}
-          disabled={currentIndex === 0}
+          disabled={effectiveIndex === 0}
           whileTap={{ scale: 0.9 }}
-          aria-label="Vorige kaart"
+          aria-label={t('prevCard')}
         >
           <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
             <polyline points="15 18 9 12 15 6" />
@@ -276,16 +273,16 @@ export default function CardStack({ theme, favorites, onToggleFavorite, cardThem
         </motion.button>
 
         <span className="stack-counter">
-          {Math.min(currentIndex + 1, cards.length)} / {cards.length}
+          {Math.min(effectiveIndex + 1, cards.length)} / {cards.length}
         </span>
 
         <motion.button
           className="control-button"
           onClick={handleNextButton}
-          disabled={currentIndex >= cards.length}
+          disabled={effectiveIndex >= cards.length}
           whileTap={{ scale: 0.9 }}
           style={{ background: theme.gradient, color: '#fff', borderColor: 'transparent' }}
-          aria-label="Volgende kaart"
+          aria-label={t('nextCard')}
         >
           <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
             <polyline points="9 18 15 12 9 6" />

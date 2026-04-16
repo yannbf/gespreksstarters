@@ -1,0 +1,26 @@
+{
+  "appTitle": "Puxar Conversa",
+  "appSubtitle": "Toque em um cartão para ver a tradução",
+  "tapToTranslate": "Toque para traduzir",
+  "tapToFlipBack": "Toque para voltar",
+  "noFavorites": "Sem favoritos ainda",
+  "noFavoritesHint": "Toque no coração de um cartão para salvá-lo aqui.",
+  "allDone": "Acabou!",
+  "allDoneHint": "Você viu todos os cartões deste tema.",
+  "playAgain": "Jogar de novo",
+  "languages": "Idiomas",
+  "from": "De",
+  "to": "Para",
+  "prevCard": "Cartão anterior",
+  "nextCard": "Próximo cartão",
+  "changeLanguage": "Mudar idioma",
+  "favorites": "Favoritos",
+  "themes": {
+    "luchtig": "Leve",
+    "diepgaand": "Profundo",
+    "relaties": "Relacionamentos",
+    "dromen": "Sonhos & Metas",
+    "herinneringen": "Memórias",
+    "zou-je-liever": "Você Prefere"
+  }
+}

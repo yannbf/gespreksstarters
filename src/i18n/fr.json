@@ -1,0 +1,26 @@
+{
+  "appTitle": "Sujets de Conversation",
+  "appSubtitle": "Touchez une carte pour voir la traduction",
+  "tapToTranslate": "Touchez pour traduire",
+  "tapToFlipBack": "Touchez pour retourner",
+  "noFavorites": "Pas encore de favoris",
+  "noFavoritesHint": "Touchez le cœur sur une carte pour la sauvegarder ici.",
+  "allDone": "Terminé !",
+  "allDoneHint": "Vous avez vu toutes les cartes de ce thème.",
+  "playAgain": "Rejouer",
+  "languages": "Langues",
+  "from": "De",
+  "to": "Vers",
+  "prevCard": "Carte précédente",
+  "nextCard": "Carte suivante",
+  "changeLanguage": "Changer de langue",
+  "favorites": "Favoris",
+  "themes": {
+    "luchtig": "Léger",
+    "diepgaand": "Profond",
+    "relaties": "Relations",
+    "dromen": "Rêves & Objectifs",
+    "herinneringen": "Souvenirs",
+    "zou-je-liever": "Tu Préfères"
+  }
+}

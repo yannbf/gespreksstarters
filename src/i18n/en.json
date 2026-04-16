@@ -1,0 +1,26 @@
+{
+  "appTitle": "Conversation Starters",
+  "appSubtitle": "Tap a card to see the translation",
+  "tapToTranslate": "Tap to translate",
+  "tapToFlipBack": "Tap to flip back",
+  "noFavorites": "No favorites yet",
+  "noFavoritesHint": "Tap the heart on a card to save it here.",
+  "allDone": "All done!",
+  "allDoneHint": "You have seen all cards in this theme.",
+  "playAgain": "Play again",
+  "languages": "Languages",
+  "from": "From",
+  "to": "To",
+  "prevCard": "Previous card",
+  "nextCard": "Next card",
+  "changeLanguage": "Change language",
+  "favorites": "Favorites",
+  "themes": {
+    "luchtig": "Light",
+    "diepgaand": "Deep",
+    "relaties": "Relationships",
+    "dromen": "Dreams & Goals",
+    "herinneringen": "Memories",
+    "zou-je-liever": "Would You Rather"
+  }
+}
