@@ -87,7 +87,7 @@ export default function LanguageModal({
                       className={`lang-option ${fromLang === lang.code ? 'lang-option-active' : ''}`}
                       onClick={() => handleFromClick(lang.code)}
                     >
-                      <Flag code={lang.code} size={28} />
+                      <Flag code={lang.code} size={24} />
                       <span className="lang-option-name">{lang.name}</span>
                     </button>
                   ))}
@@ -120,7 +120,7 @@ export default function LanguageModal({
                       className={`lang-option ${toLang === lang.code ? 'lang-option-active' : ''}`}
                       onClick={() => handleToClick(lang.code)}
                     >
-                      <Flag code={lang.code} size={28} />
+                      <Flag code={lang.code} size={24} />
                       <span className="lang-option-name">{lang.name}</span>
                     </button>
                   ))}
