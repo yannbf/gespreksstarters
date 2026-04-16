@@ -65,7 +65,9 @@
 .theme-selector {
   padding: 8px 0;
   flex-shrink: 0;
+  position: relative;
 }
+
 
 .theme-pills {
   display: flex;
@@ -126,6 +128,38 @@
   border-radius: 100px;
   border: 2px solid rgba(255, 255, 255, 0.3);
   pointer-events: none;
+}
+
+.theme-pill-arrow {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 26px;
+  height: 26px;
+  border-radius: 50%;
+  border: none;
+  background: rgba(73, 73, 73, 0.85);
+  color: #fff;
+  cursor: pointer;
+  z-index: 2;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.3);
+  -webkit-tap-highlight-color: transparent;
+  transition: background 0.2s;
+}
+
+.theme-pill-arrow:hover {
+  background: rgba(99, 102, 241, 1);
+}
+
+.theme-pill-arrow-left {
+  left: 6px;
+}
+
+.theme-pill-arrow-right {
+  right: 6px;
 }
 
 /* --- Card Stack --- */
