@@ -65,7 +65,6 @@ function App() {
   const [langModalOpen, setLangModalOpen] = useState(false);
   const [fromLang, setFromLang] = useState<LanguageCode>(() => loadLanguages().from);
   const [toLang, setToLang] = useState<LanguageCode>(() => loadLanguages().to);
-
   // Build favorites theme with cards from all themes
   const favoritesTheme = useMemo(() => {
     const allCards = themes.flatMap((t) => t.cards);
