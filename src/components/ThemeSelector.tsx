@@ -27,7 +27,7 @@ export default function ThemeSelector({ themes, activeTheme, onSelect }: ThemeSe
               whileTap={{ scale: 0.93 }}
               style={
                 isActive
-                  ? { background: theme.gradient, color: '#fff', borderColor: 'transparent' }
+                  ? { background: theme.gradient, color: '#fff', border: 'none' }
                   : {}
               }
             >

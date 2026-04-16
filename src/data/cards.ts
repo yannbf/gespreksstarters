@@ -29,7 +29,8 @@ export const themes: Theme[] = [
         dutch: 'Wat is het grappigste dat je ooit is overkomen?',
         english: 'What is the funniest thing that ever happened to you?',
         portuguese: 'Qual é a coisa mais engraçada que já aconteceu com você?',
-        french: 'Quelle est la chose la plus drôle qui vous soit jamais arrivée ?',
+        french:
+          'Quelle est la chose la plus drôle qui vous soit jamais arrivée ?',
         spanish: '¿Cuál es la cosa más divertida que te ha pasado?',
       },
       {
@@ -133,7 +134,8 @@ export const themes: Theme[] = [
         dutch: 'Heb je een onzinnige gewoonte waar je niet mee kunt stoppen?',
         english: 'Do you have a silly habit you cannot stop?',
         portuguese: 'Você tem algum hábito bobo do qual não consegue parar?',
-        french: 'Avez-vous une habitude idiote dont vous ne pouvez pas vous défaire ?',
+        french:
+          'Avez-vous une habitude idiote dont vous ne pouvez pas vous défaire ?',
         spanish: '¿Tienes algún hábito tonto del que no puedes parar?',
       },
       {
@@ -154,15 +156,16 @@ export const themes: Theme[] = [
           'Se você pudesse levar uma coisa para uma ilha deserta, o que seria?',
         french:
           'Si vous pouviez emporter une chose sur une île déserte, ce serait quoi ?',
-        spanish:
-          'Si pudieras llevar una cosa a una isla desierta, ¿qué sería?',
+        spanish: 'Si pudieras llevar una cosa a una isla desierta, ¿qué sería?',
       },
       {
         id: 'l17',
         dutch: 'Wat is het vreemdste dat je ooit hebt gegoogeld?',
         english: 'What is the strangest thing you have ever googled?',
-        portuguese: 'Qual é a coisa mais estranha que você já pesquisou no Google?',
-        french: 'Quelle est la chose la plus étrange que vous ayez jamais googlée ?',
+        portuguese:
+          'Qual é a coisa mais estranha que você já pesquisou no Google?',
+        french:
+          'Quelle est la chose la plus étrange que vous ayez jamais googlée ?',
         spanish: '¿Cuál es la cosa más rara que has buscado en Google?',
       },
       {
@@ -215,7 +218,8 @@ export const themes: Theme[] = [
         dutch: 'Wat is het langste dat je ooit hebt binge-gewatched?',
         english: 'What is the longest you have ever binge-watched something?',
         portuguese: 'Qual foi o maior maratona de série que você já fez?',
-        french: 'Quelle est la plus longue session de binge-watching que vous ayez faite ?',
+        french:
+          'Quelle est la plus longue session de binge-watching que vous ayez faite ?',
         spanish: '¿Cuánto tiempo llevas viendo series de una sola vez?',
       },
       {
@@ -252,7 +256,8 @@ export const themes: Theme[] = [
         dutch: 'Houd je van karaoke? Wat zou je nummer zijn?',
         english: 'Do you like karaoke? What would your go-to song be?',
         portuguese: 'Você gosta de karaokê? Qual seria a sua música favorita?',
-        french: 'Aimez-vous le karaoké ? Quelle serait votre chanson incontournable ?',
+        french:
+          'Aimez-vous le karaoké ? Quelle serait votre chanson incontournable ?',
         spanish: '¿Te gusta el karaoke? ¿Cuál sería tu canción estrella?',
       },
       {
@@ -261,23 +266,29 @@ export const themes: Theme[] = [
           'Wat is je favoriete manier om een regenachtige dag door te brengen?',
         english: 'What is your favorite way to spend a rainy day?',
         portuguese: 'Qual é a sua forma favorita de passar um dia chuvoso?',
-        french: "Quelle est votre façon préférée de passer une journée pluvieuse ?",
+        french:
+          'Quelle est votre façon préférée de passer une journée pluvieuse ?',
         spanish: '¿Cuál es tu forma favorita de pasar un día lluvioso?',
       },
       {
         id: 'l29',
         dutch: 'Als je een cartoon-personage kon zijn, wie zou je kiezen?',
         english: 'If you could be a cartoon character, who would you choose?',
-        portuguese: 'Se você pudesse ser um personagem de desenho animado, quem escolheria?',
-        french: 'Si vous pouviez être un personnage de dessin animé, qui choisiriez-vous ?',
-        spanish: 'Si pudieras ser un personaje de dibujos animados, ¿quién elegirías?',
+        portuguese:
+          'Se você pudesse ser um personagem de desenho animado, quem escolheria?',
+        french:
+          'Si vous pouviez être un personnage de dessin animé, qui choisiriez-vous ?',
+        spanish:
+          'Si pudieras ser un personaje de dibujos animados, ¿quién elegirías?',
       },
       {
         id: 'l30',
         dutch: 'Wat is de raarste combinatie van eten die je lekker vindt?',
         english: 'What is the weirdest food combination you enjoy?',
-        portuguese: 'Qual é a combinação de alimentos mais estranha que você gosta?',
-        french: "Quelle est la combinaison d'aliments la plus bizarre que vous appréciez ?",
+        portuguese:
+          'Qual é a combinação de alimentos mais estranha que você gosta?',
+        french:
+          "Quelle est la combinaison d'aliments la plus bizarre que vous appréciez ?",
         spanish: '¿Cuál es la combinación de comida más rara que te gusta?',
       },
     ],
@@ -294,7 +305,8 @@ export const themes: Theme[] = [
         dutch: 'Wat is het moedigste dat je ooit hebt gedaan?',
         english: 'What is the bravest thing you have ever done?',
         portuguese: 'Qual é a coisa mais corajosa que você já fez?',
-        french: 'Quelle est la chose la plus courageuse que vous ayez jamais faite ?',
+        french:
+          'Quelle est la chose la plus courageuse que vous ayez jamais faite ?',
         spanish: '¿Cuál es la cosa más valiente que has hecho?',
       },
       {
@@ -359,12 +371,10 @@ export const themes: Theme[] = [
           'Als je één ding aan de wereld kon veranderen, wat zou het zijn?',
         english:
           'If you could change one thing about the world, what would it be?',
-        portuguese:
-          'Se você pudesse mudar uma coisa no mundo, o que seria?',
+        portuguese: 'Se você pudesse mudar uma coisa no mundo, o que seria?',
         french:
           'Si vous pouviez changer une chose dans le monde, ce serait quoi ?',
-        spanish:
-          'Si pudieras cambiar una cosa del mundo, ¿qué sería?',
+        spanish: 'Si pudieras cambiar una cosa del mundo, ¿qué sería?',
       },
       {
         id: 'd10',
@@ -388,13 +398,15 @@ export const themes: Theme[] = [
         english: 'What is something you always wanted to ask but never dared?',
         portuguese: 'O que você sempre quis perguntar mas nunca teve coragem?',
         french: "Qu'avez-vous toujours voulu demander mais n'avez jamais osé ?",
-        spanish: '¿Qué es algo que siempre quisiste preguntar pero nunca te atreviste?',
+        spanish:
+          '¿Qué es algo que siempre quisiste preguntar pero nunca te atreviste?',
       },
       {
         id: 'd13',
         dutch: 'Geloof je dat mensen fundamenteel kunnen veranderen?',
         english: 'Do you believe people can fundamentally change?',
-        portuguese: 'Você acredita que as pessoas podem mudar fundamentalmente?',
+        portuguese:
+          'Você acredita que as pessoas podem mudar fundamentalmente?',
         french: 'Croyez-vous que les gens peuvent fondamentalement changer ?',
         spanish: '¿Crees que las personas pueden cambiar fundamentalmente?',
       },
@@ -403,20 +415,21 @@ export const themes: Theme[] = [
         dutch: 'Wat is iets waar je vroeger zeker van was, maar nu niet meer?',
         english:
           'What is something you used to be certain about, but no longer are?',
-        portuguese:
-          'Sobre o que você tinha certeza antes, mas não tem mais?',
+        portuguese: 'Sobre o que você tinha certeza antes, mas não tem mais?',
         french:
           "De quoi étiez-vous certain autrefois, mais ne l'êtes plus maintenant ?",
-        spanish:
-          '¿De qué estabas seguro antes pero ya no lo estás?',
+        spanish: '¿De qué estabas seguro antes pero ya no lo estás?',
       },
       {
         id: 'd15',
         dutch: 'Wanneer heb je je voor het laatst echt kwetsbaar opgesteld?',
         english: 'When was the last time you made yourself truly vulnerable?',
-        portuguese: 'Quando foi a última vez que você se mostrou verdadeiramente vulnerável?',
-        french: 'La dernière fois que vous vous êtes vraiment rendu vulnérable, c\'était quand ?',
-        spanish: '¿Cuándo fue la última vez que te mostraste verdaderamente vulnerable?',
+        portuguese:
+          'Quando foi a última vez que você se mostrou verdadeiramente vulnerável?',
+        french:
+          "La dernière fois que vous vous êtes vraiment rendu vulnérable, c'était quand ?",
+        spanish:
+          '¿Cuándo fue la última vez que te mostraste verdaderamente vulnerable?',
       },
       {
         id: 'd16',
@@ -468,7 +481,8 @@ export const themes: Theme[] = [
         dutch: 'Wat vind je het moeilijkst om te accepteren aan het leven?',
         english: 'What do you find hardest to accept about life?',
         portuguese: 'O que você acha mais difícil de aceitar na vida?',
-        french: "Qu'est-ce que vous trouvez le plus difficile à accepter dans la vie ?",
+        french:
+          "Qu'est-ce que vous trouvez le plus difficile à accepter dans la vie ?",
         spanish: '¿Qué es lo más difícil de aceptar de la vida?',
       },
       {
@@ -476,15 +490,18 @@ export const themes: Theme[] = [
         dutch: 'Is er iets waar je spijt van hebt dat je het niet hebt gezegd?',
         english: 'Is there something you regret not having said?',
         portuguese: 'Há algo que você se arrepende de não ter dito?',
-        french: "Y a-t-il quelque chose que vous regrettez de ne pas avoir dit ?",
+        french:
+          'Y a-t-il quelque chose que vous regrettez de ne pas avoir dit ?',
         spanish: '¿Hay algo de lo que te arrepientas de no haber dicho?',
       },
       {
         id: 'd23',
         dutch: 'Wat maakt jou uniek en hoe voel je je daarover?',
         english: 'What makes you unique and how do you feel about it?',
-        portuguese: 'O que te torna único e como você se sente em relação a isso?',
-        french: 'Qu\'est-ce qui vous rend unique et comment vous sentez-vous par rapport à ça ?',
+        portuguese:
+          'O que te torna único e como você se sente em relação a isso?',
+        french:
+          "Qu'est-ce qui vous rend unique et comment vous sentez-vous par rapport à ça ?",
         spanish: '¿Qué te hace único y cómo te sientes al respecto?',
       },
       {
@@ -504,8 +521,7 @@ export const themes: Theme[] = [
           'Qual é a coisa mais importante que você aprendeu com um estranho?',
         french:
           "Quelle est la chose la plus importante que vous ayez apprise d'un inconnu ?",
-        spanish:
-          '¿Qué es lo más importante que aprendiste de un desconocido?',
+        spanish: '¿Qué es lo más importante que aprendiste de un desconocido?',
       },
       {
         id: 'd26',
@@ -516,45 +532,50 @@ export const themes: Theme[] = [
           'Onde você encontra paz quando tudo ao seu redor é caótico?',
         french:
           'Où trouvez-vous la paix quand tout autour de vous est chaotique ?',
-        spanish:
-          '¿Dónde encuentras paz cuando todo a tu alrededor es caótico?',
+        spanish: '¿Dónde encuentras paz cuando todo a tu alrededor es caótico?',
       },
       {
         id: 'd27',
         dutch: 'Heb je ooit een overtuiging volledig losgelaten? Wat was dat?',
         english: 'Have you ever completely abandoned a belief? What was it?',
         portuguese: 'Você já abandonou completamente uma crença? Qual foi ela?',
-        french: 'Avez-vous déjà complètement abandonné une croyance ? Laquelle ?',
-        spanish: '¿Alguna vez abandonaste por completo una creencia? ¿Cuál fue?',
+        french:
+          'Avez-vous déjà complètement abandonné une croyance ? Laquelle ?',
+        spanish:
+          '¿Alguna vez abandonaste por completo una creencia? ¿Cuál fue?',
       },
       {
         id: 'd28',
         dutch: 'Wat zou je willen begrijpen dat je nu nog niet begrijpt?',
         english:
           'What would you like to understand that you do not understand yet?',
-        portuguese:
-          'O que você gostaria de entender que ainda não entende?',
+        portuguese: 'O que você gostaria de entender que ainda não entende?',
         french:
           "Qu'aimeriez-vous comprendre que vous ne comprenez pas encore ?",
-        spanish:
-          '¿Qué te gustaría entender que todavía no entiendes?',
+        spanish: '¿Qué te gustaría entender que todavía no entiendes?',
       },
       {
         id: 'd29',
         dutch: 'Wanneer voelde je je voor het laatst helemaal op je plek?',
         english: 'When did you last feel completely in your element?',
-        portuguese: 'Quando foi a última vez que você se sentiu completamente no seu elemento?',
-        french: 'Quand vous êtes-vous senti pour la dernière fois totalement dans votre élément ?',
-        spanish: '¿Cuándo fue la última vez que te sentiste completamente en tu elemento?',
+        portuguese:
+          'Quando foi a última vez que você se sentiu completamente no seu elemento?',
+        french:
+          'Quand vous êtes-vous senti pour la dernière fois totalement dans votre élément ?',
+        spanish:
+          '¿Cuándo fue la última vez que te sentiste completamente en tu elemento?',
       },
       {
         id: 'd30',
         dutch:
           'Als je leven een boek was, welk hoofdstuk ben je nu aan het schrijven?',
         english: 'If your life were a book, which chapter are you writing now?',
-        portuguese: 'Se a sua vida fosse um livro, qual capítulo você está escrevendo agora?',
-        french: 'Si votre vie était un livre, quel chapitre êtes-vous en train d\'écrire ?',
-        spanish: 'Si tu vida fuera un libro, ¿qué capítulo estás escribiendo ahora?',
+        portuguese:
+          'Se a sua vida fosse um livro, qual capítulo você está escrevendo agora?',
+        french:
+          "Si votre vie était un livre, quel chapitre êtes-vous en train d'écrire ?",
+        spanish:
+          'Si tu vida fuera un libro, ¿qué capítulo estás escribiendo ahora?',
       },
     ],
   },
@@ -578,15 +599,17 @@ export const themes: Theme[] = [
         dutch: 'Hoe laat je iemand weten dat je om hen geeft?',
         english: 'How do you show someone you care about them?',
         portuguese: 'Como você mostra a alguém que se importa com ela?',
-        french: 'Comment montrez-vous à quelqu\'un que vous tenez à lui ?',
+        french: "Comment montrez-vous à quelqu'un que vous tenez à lui ?",
         spanish: '¿Cómo le demuestras a alguien que te importa?',
       },
       {
         id: 'r3',
         dutch: 'Wat is de beste relatie-advies die je ooit hebt gekregen?',
         english: 'What is the best relationship advice you ever received?',
-        portuguese: 'Qual é o melhor conselho de relacionamento que você já recebeu?',
-        french: 'Quel est le meilleur conseil en matière de relation que vous ayez jamais reçu ?',
+        portuguese:
+          'Qual é o melhor conselho de relacionamento que você já recebeu?',
+        french:
+          'Quel est le meilleur conseil en matière de relation que vous ayez jamais reçu ?',
         spanish: '¿Cuál es el mejor consejo de relación que has recibido?',
       },
       {
@@ -609,8 +632,10 @@ export const themes: Theme[] = [
         id: 'r6',
         dutch: 'Wat vind je het belangrijkste in een relatie?',
         english: 'What do you find most important in a relationship?',
-        portuguese: 'O que você considera mais importante em um relacionamento?',
-        french: "Qu'est-ce que vous trouvez le plus important dans une relation ?",
+        portuguese:
+          'O que você considera mais importante em um relacionamento?',
+        french:
+          "Qu'est-ce que vous trouvez le plus important dans une relation ?",
         spanish: '¿Qué es lo más importante para ti en una relación?',
       },
       {
@@ -650,7 +675,7 @@ export const themes: Theme[] = [
         dutch: 'Wat zou je nooit kunnen vergeven?',
         english: 'What could you never forgive?',
         portuguese: 'O que você jamais conseguiria perdoar?',
-        french: 'Qu\'est-ce que vous ne pourriez jamais pardonner ?',
+        french: "Qu'est-ce que vous ne pourriez jamais pardonner ?",
         spanish: '¿Qué es algo que nunca podrías perdonar?',
       },
       {
@@ -658,7 +683,8 @@ export const themes: Theme[] = [
         dutch: 'Hoe weet je of je iemand echt vertrouwt?',
         english: 'How do you know if you truly trust someone?',
         portuguese: 'Como você sabe se realmente confia em alguém?',
-        french: 'Comment savez-vous si vous faites vraiment confiance à quelqu\'un ?',
+        french:
+          "Comment savez-vous si vous faites vraiment confiance à quelqu'un ?",
         spanish: '¿Cómo sabes si realmente confías en alguien?',
       },
       {
@@ -666,7 +692,8 @@ export const themes: Theme[] = [
         dutch: 'Wat is het beste dat een vriend ooit voor je heeft gedaan?',
         english: 'What is the best thing a friend has ever done for you?',
         portuguese: 'Qual é a melhor coisa que um amigo já fez por você?',
-        french: 'Quelle est la meilleure chose qu\'un ami ait jamais faite pour vous ?',
+        french:
+          "Quelle est la meilleure chose qu'un ami ait jamais faite pour vous ?",
         spanish: '¿Qué es lo mejor que un amigo ha hecho por ti?',
       },
       {
@@ -684,25 +711,25 @@ export const themes: Theme[] = [
           'What did you learn from a relationship that did not work out?',
         portuguese:
           'O que você aprendeu com um relacionamento que não deu certo?',
-        french:
-          "Qu'avez-vous appris d'une relation qui n'a pas fonctionné ?",
-        spanish:
-          '¿Qué aprendiste de una relación que no funcionó?',
+        french: "Qu'avez-vous appris d'une relation qui n'a pas fonctionné ?",
+        spanish: '¿Qué aprendiste de una relación que no funcionó?',
       },
       {
         id: 'r16',
         dutch: 'Hoe laat je iemand weten dat je sorry bent?',
         english: 'How do you let someone know you are sorry?',
         portuguese: 'Como você faz para pedir desculpas a alguém?',
-        french: 'Comment faites-vous savoir à quelqu\'un que vous êtes désolé ?',
+        french: "Comment faites-vous savoir à quelqu'un que vous êtes désolé ?",
         spanish: '¿Cómo le haces saber a alguien que lo sientes?',
       },
       {
         id: 'r17',
         dutch: 'Wat is de mooiste herinnering die je met een vriend deelt?',
         english: 'What is the most beautiful memory you share with a friend?',
-        portuguese: 'Qual é a memória mais bonita que você compartilha com um amigo?',
-        french: 'Quel est le plus beau souvenir que vous partagez avec un ami ?',
+        portuguese:
+          'Qual é a memória mais bonita que você compartilha com um amigo?',
+        french:
+          'Quel est le plus beau souvenir que vous partagez avec un ami ?',
         spanish: '¿Cuál es el recuerdo más bonito que compartes con un amigo?',
       },
       {
@@ -713,7 +740,7 @@ export const themes: Theme[] = [
         portuguese:
           'Como você percebe que realmente se sente à vontade com alguém?',
         french:
-          'Comment remarquez-vous que vous vous sentez vraiment à l\'aise avec quelqu\'un ?',
+          "Comment remarquez-vous que vous vous sentez vraiment à l'aise avec quelqu'un ?",
         spanish:
           '¿Cómo notas que te sientes verdaderamente cómodo con alguien?',
       },
@@ -730,7 +757,7 @@ export const themes: Theme[] = [
         dutch: 'Hoe ga je om met het verliezen van een vriendschap?',
         english: 'How do you cope with losing a friendship?',
         portuguese: 'Como você lida com a perda de uma amizade?',
-        french: 'Comment faites-vous face à la perte d\'une amitié ?',
+        french: "Comment faites-vous face à la perte d'une amitié ?",
         spanish: '¿Cómo afrontas la pérdida de una amistad?',
       },
       {
@@ -738,7 +765,7 @@ export const themes: Theme[] = [
         dutch: 'Wat maakt iemand tot een goede luisteraar?',
         english: 'What makes someone a good listener?',
         portuguese: 'O que torna alguém um bom ouvinte?',
-        french: 'Qu\'est-ce qui fait de quelqu\'un un bon auditeur ?',
+        french: "Qu'est-ce qui fait de quelqu'un un bon auditeur ?",
         spanish: '¿Qué hace que alguien sea un buen oyente?',
       },
       {
@@ -746,7 +773,7 @@ export const themes: Theme[] = [
         dutch: 'Hoe belangrijk is humor in je relaties?',
         english: 'How important is humor in your relationships?',
         portuguese: 'Qual é a importância do humor nos seus relacionamentos?',
-        french: 'Quelle est l\'importance de l\'humour dans vos relations ?',
+        french: "Quelle est l'importance de l'humour dans vos relations ?",
         spanish: '¿Qué tan importante es el humor en tus relaciones?',
       },
       {
@@ -755,7 +782,8 @@ export const themes: Theme[] = [
           'Ben je iemand die snel vergeeft of heb je daar tijd voor nodig?',
         english: 'Are you someone who forgives quickly or do you need time?',
         portuguese: 'Você é alguém que perdoa rápido ou precisa de tempo?',
-        french: 'Êtes-vous quelqu\'un qui pardonne vite ou avez-vous besoin de temps ?',
+        french:
+          "Êtes-vous quelqu'un qui pardonne vite ou avez-vous besoin de temps ?",
         spanish: '¿Eres alguien que perdona rápido o necesitas tiempo?',
       },
       {
@@ -763,7 +791,8 @@ export const themes: Theme[] = [
         dutch: 'Wat is het moeilijkste gesprek dat je ooit hebt gevoerd?',
         english: 'What is the hardest conversation you have ever had?',
         portuguese: 'Qual é a conversa mais difícil que você já teve?',
-        french: 'Quelle est la conversation la plus difficile que vous ayez jamais eue ?',
+        french:
+          'Quelle est la conversation la plus difficile que vous ayez jamais eue ?',
         spanish: '¿Cuál es la conversación más difícil que has tenido?',
       },
       {
@@ -771,7 +800,7 @@ export const themes: Theme[] = [
         dutch: 'Hoe weet je of iemand echt naar je luistert?',
         english: 'How do you know if someone is really listening to you?',
         portuguese: 'Como você sabe se alguém está realmente te ouvindo?',
-        french: 'Comment savez-vous si quelqu\'un vous écoute vraiment ?',
+        french: "Comment savez-vous si quelqu'un vous écoute vraiment ?",
         spanish: '¿Cómo sabes si alguien te está escuchando de verdad?',
       },
       {
@@ -795,7 +824,7 @@ export const themes: Theme[] = [
         portuguese:
           'Como você equilibra suas próprias necessidades com as da outra pessoa?',
         french:
-          'Comment équilibrez-vous vos propres besoins avec ceux de l\'autre ?',
+          "Comment équilibrez-vous vos propres besoins avec ceux de l'autre ?",
         spanish:
           '¿Cómo equilibras tus propias necesidades con las de la otra persona?',
       },
@@ -803,8 +832,10 @@ export const themes: Theme[] = [
         id: 'r28',
         dutch: 'Wat vind je het moeilijkst om te communiceren in een relatie?',
         english: 'What do you find hardest to communicate in a relationship?',
-        portuguese: 'O que você acha mais difícil de comunicar em um relacionamento?',
-        french: 'Qu\'est-ce que vous trouvez le plus difficile à communiquer dans une relation ?',
+        portuguese:
+          'O que você acha mais difícil de comunicar em um relacionamento?',
+        french:
+          "Qu'est-ce que vous trouvez le plus difficile à communiquer dans une relation ?",
         spanish: '¿Qué es lo más difícil de comunicar en una relación?',
       },
       {
@@ -819,8 +850,9 @@ export const themes: Theme[] = [
         id: 'r30',
         dutch: 'Wat zou je willen dat meer mensen begrepen over jou?',
         english: 'What do you wish more people understood about you?',
-        portuguese: 'O que você gostaria que mais pessoas entendessem sobre você?',
-        french: 'Qu\'aimeriez-vous que plus de gens comprennent à votre sujet ?',
+        portuguese:
+          'O que você gostaria que mais pessoas entendessem sobre você?',
+        french: "Qu'aimeriez-vous que plus de gens comprennent à votre sujet ?",
         spanish: '¿Qué desearías que más personas entendieran sobre ti?',
       },
     ],
@@ -837,7 +869,8 @@ export const themes: Theme[] = [
         dutch: 'Wat staat er bovenaan je bucketlist?',
         english: 'What is at the top of your bucket list?',
         portuguese: 'O que está no topo da sua lista de realizações?',
-        french: 'Qu\'y a-t-il en tête de votre liste de choses à faire avant de mourir ?',
+        french:
+          "Qu'y a-t-il en tête de votre liste de choses à faire avant de mourir ?",
         spanish: '¿Qué encabeza tu lista de cosas por hacer antes de morir?',
       },
       {
@@ -861,7 +894,7 @@ export const themes: Theme[] = [
         dutch: 'Als geld geen rol speelde, wat zou je dan doen?',
         english: 'If money were no object, what would you do?',
         portuguese: 'Se o dinheiro não fosse problema, o que você faria?',
-        french: 'Si l\'argent n\'était pas un problème, que feriez-vous ?',
+        french: "Si l'argent n'était pas un problème, que feriez-vous ?",
         spanish: 'Si el dinero no fuera un problema, ¿qué harías?',
       },
       {
@@ -877,7 +910,7 @@ export const themes: Theme[] = [
         dutch: 'Wat wil je nog leren in je leven?',
         english: 'What do you still want to learn in your life?',
         portuguese: 'O que você ainda quer aprender na vida?',
-        french: 'Qu\'est-ce que vous voulez encore apprendre dans votre vie ?',
+        french: "Qu'est-ce que vous voulez encore apprendre dans votre vie ?",
         spanish: '¿Qué más quieres aprender en tu vida?',
       },
       {
@@ -885,7 +918,8 @@ export const themes: Theme[] = [
         dutch: 'Wat is een doel waar je nu aan werkt?',
         english: 'What is a goal you are currently working on?',
         portuguese: 'Qual é um objetivo que você está trabalhando agora?',
-        french: 'Quel est un objectif sur lequel vous travaillez en ce moment ?',
+        french:
+          'Quel est un objectif sur lequel vous travaillez en ce moment ?',
         spanish: '¿Cuál es un objetivo en el que estás trabajando actualmente?',
       },
       {
@@ -901,7 +935,8 @@ export const themes: Theme[] = [
         dutch: 'Wat zou je doen als je wist dat je niet kon falen?',
         english: 'What would you do if you knew you could not fail?',
         portuguese: 'O que você faria se soubesse que não poderia falhar?',
-        french: 'Que feriez-vous si vous saviez que vous ne pouviez pas échouer ?',
+        french:
+          'Que feriez-vous si vous saviez que vous ne pouviez pas échouer ?',
         spanish: '¿Qué harías si supieras que no puedes fracasar?',
       },
       {
@@ -933,7 +968,8 @@ export const themes: Theme[] = [
         dutch: 'Welk project zou je starten als je een heel jaar vrij had?',
         english: 'What project would you start if you had a whole year off?',
         portuguese: 'Que projeto você iniciaria se tivesse um ano livre?',
-        french: 'Quel projet lanceriez-vous si vous aviez toute une année de libre ?',
+        french:
+          'Quel projet lanceriez-vous si vous aviez toute une année de libre ?',
         spanish: '¿Qué proyecto iniciarías si tuvieras un año entero libre?',
       },
       {
@@ -941,19 +977,18 @@ export const themes: Theme[] = [
         dutch:
           'Wat is een droom die je hebt opgegeven en wil je die nog steeds?',
         english: 'What is a dream you gave up on and do you still want it?',
-        portuguese:
-          'Qual é um sonho que você abandonou e você ainda o quer?',
+        portuguese: 'Qual é um sonho que você abandonou e você ainda o quer?',
         french:
           'Quel est un rêve auquel vous avez renoncé et le voulez-vous encore ?',
-        spanish:
-          '¿Cuál es un sueño que abandonaste y todavía lo deseas?',
+        spanish: '¿Cuál es un sueño que abandonaste y todavía lo deseas?',
       },
       {
         id: 'dr15',
         dutch: 'In welke stad of welk dorp zou je het liefst willen wonen?',
         english: 'In which city or town would you most like to live?',
         portuguese: 'Em qual cidade ou vila você mais gostaria de morar?',
-        french: 'Dans quelle ville ou quel village aimeriez-vous le plus vivre ?',
+        french:
+          'Dans quelle ville ou quel village aimeriez-vous le plus vivre ?',
         spanish: '¿En qué ciudad o pueblo te gustaría vivir más?',
       },
       {
@@ -961,7 +996,7 @@ export const themes: Theme[] = [
         dutch: 'Wat zou je willen uitvinden als je kon?',
         english: 'What would you like to invent if you could?',
         portuguese: 'O que você gostaria de inventar se pudesse?',
-        french: 'Qu\'aimeriez-vous inventer si vous le pouviez ?',
+        french: "Qu'aimeriez-vous inventer si vous le pouviez ?",
         spanish: '¿Qué te gustaría inventar si pudieras?',
       },
       {
@@ -977,12 +1012,9 @@ export const themes: Theme[] = [
         dutch: 'Wat is iets waar je naartoe spaart of naar uitkijkt?',
         english:
           'What is something you are saving up for or looking forward to?',
-        portuguese:
-          'O que você está poupando ou esperando ansiosamente?',
-        french:
-          'Qu\'est-ce que vous épargnez ou attendez avec impatience ?',
-        spanish:
-          '¿Para qué estás ahorrando o qué esperas con ansias?',
+        portuguese: 'O que você está poupando ou esperando ansiosamente?',
+        french: "Qu'est-ce que vous épargnez ou attendez avec impatience ?",
+        spanish: '¿Para qué estás ahorrando o qué esperas con ansias?',
       },
       {
         id: 'dr19',
@@ -1004,9 +1036,12 @@ export const themes: Theme[] = [
         id: 'dr21',
         dutch: 'Wat is een kleine droom die je makkelijk zou kunnen waarmaken?',
         english: 'What is a small dream you could easily make come true?',
-        portuguese: 'Qual é um pequeno sonho que você poderia facilmente realizar?',
-        french: 'Quel est un petit rêve que vous pourriez facilement réaliser ?',
-        spanish: '¿Cuál es un pequeño sueño que podrías hacer realidad fácilmente?',
+        portuguese:
+          'Qual é um pequeno sonho que você poderia facilmente realizar?',
+        french:
+          'Quel est un petit rêve que vous pourriez facilement réaliser ?',
+        spanish:
+          '¿Cuál es un pequeño sueño que podrías hacer realidad fácilmente?',
       },
       {
         id: 'dr22',
@@ -1017,7 +1052,7 @@ export const themes: Theme[] = [
         portuguese:
           'Se você pudesse fazer qualquer curso ou graduação, qual escolheria?',
         french:
-          'Si vous pouviez suivre n\'importe quel cours ou diplôme, lequel choisiriez-vous ?',
+          "Si vous pouviez suivre n'importe quel cours ou diplôme, lequel choisiriez-vous ?",
         spanish:
           'Si pudieras tomar cualquier curso o carrera, ¿cuál elegirías?',
       },
@@ -1034,7 +1069,7 @@ export const themes: Theme[] = [
         dutch: 'Wat wil je over tien jaar bereikt hebben?',
         english: 'What do you want to have achieved in ten years?',
         portuguese: 'O que você quer ter conquistado em dez anos?',
-        french: 'Qu\'est-ce que vous voulez avoir accompli dans dix ans ?',
+        french: "Qu'est-ce que vous voulez avoir accompli dans dix ans ?",
         spanish: '¿Qué quieres haber logrado en diez años?',
       },
       {
@@ -1050,7 +1085,8 @@ export const themes: Theme[] = [
         dutch: 'Welk talent zou je willen hebben dat je nu niet hebt?',
         english: 'What talent would you like to have that you do not have now?',
         portuguese: 'Qual talento você gostaria de ter que ainda não tem?',
-        french: 'Quel talent aimeriez-vous avoir que vous n\'avez pas maintenant ?',
+        french:
+          "Quel talent aimeriez-vous avoir que vous n'avez pas maintenant ?",
         spanish: '¿Qué talento te gustaría tener que no tienes ahora?',
       },
       {
@@ -1066,9 +1102,12 @@ export const themes: Theme[] = [
         dutch:
           'Als je een jaar in het buitenland mocht werken, waar zou je naartoe gaan?',
         english: 'If you could work abroad for a year, where would you go?',
-        portuguese: 'Se você pudesse trabalhar no exterior por um ano, para onde iria?',
-        french: 'Si vous pouviez travailler à l\'étranger pendant un an, où iriez-vous ?',
-        spanish: 'Si pudieras trabajar en el extranjero por un año, ¿adónde irías?',
+        portuguese:
+          'Se você pudesse trabalhar no exterior por um ano, para onde iria?',
+        french:
+          "Si vous pouviez travailler à l'étranger pendant un an, où iriez-vous ?",
+        spanish:
+          'Si pudieras trabajar en el extranjero por un año, ¿adónde irías?',
       },
       {
         id: 'dr29',
@@ -1083,7 +1122,8 @@ export const themes: Theme[] = [
         dutch: 'Wat houdt je tegen om je grootste droom na te jagen?',
         english: 'What is holding you back from chasing your biggest dream?',
         portuguese: 'O que te impede de perseguir o seu maior sonho?',
-        french: 'Qu\'est-ce qui vous retient de poursuivre votre plus grand rêve ?',
+        french:
+          "Qu'est-ce qui vous retient de poursuivre votre plus grand rêve ?",
         spanish: '¿Qué te impide perseguir tu mayor sueño?',
       },
     ],
@@ -1093,14 +1133,14 @@ export const themes: Theme[] = [
     name: 'Herinneringen',
     emoji: '📸',
     color: '#3b82f6',
-    gradient: 'linear-gradient(135deg, #1e3a5f 0%, #3b82f6 50%, #93c5fd 100%)',
+    gradient: 'linear-gradient(135deg, #3b82f6 0%, #60a5fa 50%, #93c5fd 100%)',
     cards: [
       {
         id: 'h1',
         dutch: 'Wat is je mooiste jeugdherinnering?',
         english: 'What is your most beautiful childhood memory?',
         portuguese: 'Qual é a sua memória de infância mais bonita?',
-        french: 'Quel est votre plus beau souvenir d\'enfance ?',
+        french: "Quel est votre plus beau souvenir d'enfance ?",
         spanish: '¿Cuál es tu recuerdo de infancia más bonito?',
       },
       {
@@ -1108,7 +1148,7 @@ export const themes: Theme[] = [
         dutch: 'Welke vakantie zul je nooit vergeten?',
         english: 'Which vacation will you never forget?',
         portuguese: 'Qual férias você nunca vai esquecer?',
-        french: 'Quelles vacances n\'oublierez-vous jamais ?',
+        french: "Quelles vacances n'oublierez-vous jamais ?",
         spanish: '¿Qué vacaciones nunca olvidarás?',
       },
       {
@@ -1132,7 +1172,7 @@ export const themes: Theme[] = [
         dutch: 'Wat is de gekste plek waar je ooit bent geweest?',
         english: 'What is the craziest place you have ever been?',
         portuguese: 'Qual é o lugar mais louco onde você já esteve?',
-        french: 'Quel est l\'endroit le plus fou où vous ayez jamais été ?',
+        french: "Quel est l'endroit le plus fou où vous ayez jamais été ?",
         spanish: '¿Cuál es el lugar más loco al que has ido?',
       },
       {
@@ -1156,7 +1196,7 @@ export const themes: Theme[] = [
         dutch: 'Welk concert of evenement zul je nooit vergeten?',
         english: 'Which concert or event will you never forget?',
         portuguese: 'Qual show ou evento você nunca vai esquecer?',
-        french: 'Quel concert ou événement n\'oublierez-vous jamais ?',
+        french: "Quel concert ou événement n'oublierez-vous jamais ?",
         spanish: '¿Qué concierto o evento nunca olvidarás?',
       },
       {
@@ -1187,16 +1227,21 @@ export const themes: Theme[] = [
         id: 'h12',
         dutch: 'Welk lied brengt je meteen terug naar een bepaald moment?',
         english: 'Which song immediately takes you back to a certain moment?',
-        portuguese: 'Qual música te leva imediatamente de volta a um determinado momento?',
-        french: 'Quelle chanson vous ramène immédiatement à un certain moment ?',
-        spanish: '¿Qué canción te transporta de inmediato a un momento específico?',
+        portuguese:
+          'Qual música te leva imediatamente de volta a um determinado momento?',
+        french:
+          'Quelle chanson vous ramène immédiatement à un certain moment ?',
+        spanish:
+          '¿Qué canción te transporta de inmediato a un momento específico?',
       },
       {
         id: 'h13',
         dutch: 'Wat is het stoutste dat je als kind hebt gedaan?',
         english: 'What is the naughtiest thing you did as a child?',
-        portuguese: 'Qual é a coisa mais travessa que você fez quando era criança?',
-        french: 'Quelle est la chose la plus coquine que vous ayez faite étant enfant ?',
+        portuguese:
+          'Qual é a coisa mais travessa que você fez quando era criança?',
+        french:
+          'Quelle est la chose la plus coquine que vous ayez faite étant enfant ?',
         spanish: '¿Cuál es la travesura más grande que hiciste de niño?',
       },
       {
@@ -1219,8 +1264,10 @@ export const themes: Theme[] = [
         id: 'h16',
         dutch: 'Welke tv-serie of film keek je altijd als kind?',
         english: 'Which TV show or movie did you always watch as a child?',
-        portuguese: 'Qual série de TV ou filme você sempre assistia quando criança?',
-        french: 'Quelle série télévisée ou quel film regardiez-vous toujours enfant ?',
+        portuguese:
+          'Qual série de TV ou filme você sempre assistia quando criança?',
+        french:
+          'Quelle série télévisée ou quel film regardiez-vous toujours enfant ?',
         spanish: '¿Qué serie de TV o película veías siempre de niño?',
       },
       {
@@ -1228,19 +1275,17 @@ export const themes: Theme[] = [
         dutch: 'Wat is het avontuurlijkste dat je ooit hebt meegemaakt?',
         english:
           'What is the most adventurous thing you have ever experienced?',
-        portuguese:
-          'Qual é a coisa mais aventureira que você já viveu?',
+        portuguese: 'Qual é a coisa mais aventureira que você já viveu?',
         french:
           'Quelle est la chose la plus aventureuse que vous ayez jamais vécue ?',
-        spanish:
-          '¿Cuál es la aventura más grande que has vivido?',
+        spanish: '¿Cuál es la aventura más grande que has vivido?',
       },
       {
         id: 'h18',
         dutch: 'Welk verjaardagsfeestje ben je nooit vergeten?',
         english: 'Which birthday party have you never forgotten?',
         portuguese: 'Qual festa de aniversário você nunca esqueceu?',
-        french: 'Quelle fête d\'anniversaire n\'avez-vous jamais oubliée ?',
+        french: "Quelle fête d'anniversaire n'avez-vous jamais oubliée ?",
         spanish: '¿Qué fiesta de cumpleaños nunca has olvidado?',
       },
       {
@@ -1260,7 +1305,7 @@ export const themes: Theme[] = [
         portuguese:
           'Quem era o seu melhor amigo na escola primária e o que vocês faziam juntos?',
         french:
-          'Qui était votre meilleur ami à l\'école primaire et que faisiez-vous ensemble ?',
+          "Qui était votre meilleur ami à l'école primaire et que faisiez-vous ensemble ?",
         spanish:
           '¿Quién era tu mejor amigo en la escuela primaria y qué hacían juntos?',
       },
@@ -1273,17 +1318,19 @@ export const themes: Theme[] = [
           'Qual é a coincidência mais extraordinária que você já viveu?',
         french:
           'Quelle est la coïncidence la plus remarquable que vous ayez vécue ?',
-        spanish:
-          '¿Cuál es la coincidencia más extraordinaria que has vivido?',
+        spanish: '¿Cuál es la coincidencia más extraordinaria que has vivido?',
       },
       {
         id: 'h22',
         dutch:
           'Heb je een foto die je altijd bij je draagt of bewaart? Wat staat erop?',
         english: 'Do you have a photo you always carry or keep? What is on it?',
-        portuguese: 'Você tem uma foto que sempre carrega ou guarda? O que há nela?',
-        french: 'Avez-vous une photo que vous portez ou gardez toujours ? Que contient-elle ?',
-        spanish: '¿Tienes una foto que siempre llevas o guardas? ¿Qué hay en ella?',
+        portuguese:
+          'Você tem uma foto que sempre carrega ou guarda? O que há nela?',
+        french:
+          'Avez-vous une photo que vous portez ou gardez toujours ? Que contient-elle ?',
+        spanish:
+          '¿Tienes una foto que siempre llevas o guardas? ¿Qué hay en ella?',
       },
       {
         id: 'h23',
@@ -1306,19 +1353,19 @@ export const themes: Theme[] = [
         dutch: 'Wat is het mooiste natuurverschijnsel dat je ooit hebt gezien?',
         english:
           'What is the most beautiful natural phenomenon you have ever seen?',
-        portuguese:
-          'Qual é o fenômeno natural mais bonito que você já viu?',
+        portuguese: 'Qual é o fenômeno natural mais bonito que você já viu?',
         french:
           'Quel est le plus beau phénomène naturel que vous ayez jamais vu ?',
-        spanish:
-          '¿Cuál es el fenómeno natural más hermoso que has visto?',
+        spanish: '¿Cuál es el fenómeno natural más hermoso que has visto?',
       },
       {
         id: 'h26',
         dutch: 'Welk huisdier heb je gehad dat je nooit zult vergeten?',
         english: 'Which pet did you have that you will never forget?',
-        portuguese: 'Qual animal de estimação você teve que nunca vai esquecer?',
-        french: 'Quel animal de compagnie avez-vous eu que vous n\'oublierez jamais ?',
+        portuguese:
+          'Qual animal de estimação você teve que nunca vai esquecer?',
+        french:
+          "Quel animal de compagnie avez-vous eu que vous n'oublierez jamais ?",
         spanish: '¿Qué mascota tuviste que nunca olvidarás?',
       },
       {
@@ -1341,22 +1388,18 @@ export const themes: Theme[] = [
           'Which place from your childhood would you like to visit again?',
         portuguese:
           'Qual lugar da sua infância você gostaria de visitar novamente?',
-        french:
-          'Quel endroit de votre enfance aimeriez-vous revisiter ?',
-        spanish:
-          '¿Qué lugar de tu infancia te gustaría volver a visitar?',
+        french: 'Quel endroit de votre enfance aimeriez-vous revisiter ?',
+        spanish: '¿Qué lugar de tu infancia te gustaría volver a visitar?',
       },
       {
         id: 'h29',
         dutch: 'Wat is het grappigste misverstand dat je ooit hebt meegemaakt?',
         english:
           'What is the funniest misunderstanding you have ever experienced?',
-        portuguese:
-          'Qual é o mal-entendido mais engraçado que você já viveu?',
+        portuguese: 'Qual é o mal-entendido mais engraçado que você já viveu?',
         french:
           'Quel est le malentendu le plus drôle que vous ayez jamais vécu ?',
-        spanish:
-          '¿Cuál es el malentendido más gracioso que has vivido?',
+        spanish: '¿Cuál es el malentendido más gracioso que has vivido?',
       },
       {
         id: 'h30',
@@ -1387,8 +1430,10 @@ export const themes: Theme[] = [
         id: 'z2',
         dutch: 'Zou je liever altijd te laat of altijd te vroeg zijn?',
         english: 'Would you rather always be late or always be early?',
-        portuguese: 'Você preferiria sempre chegar atrasado ou sempre adiantado?',
-        french: 'Préféreriez-vous toujours être en retard ou toujours en avance ?',
+        portuguese:
+          'Você preferiria sempre chegar atrasado ou sempre adiantado?',
+        french:
+          'Préféreriez-vous toujours être en retard ou toujours en avance ?',
         spanish: '¿Preferirías llegar siempre tarde o siempre temprano?',
       },
       {
@@ -1404,9 +1449,12 @@ export const themes: Theme[] = [
         dutch:
           'Zou je liever nooit meer hoeven slapen of nooit meer hoeven eten?',
         english: 'Would you rather never have to sleep or never have to eat?',
-        portuguese: 'Você preferiria nunca mais precisar dormir ou nunca mais precisar comer?',
-        french: 'Préféreriez-vous ne plus jamais avoir à dormir ou ne plus jamais avoir à manger ?',
-        spanish: '¿Preferirías no tener que dormir nunca o no tener que comer nunca?',
+        portuguese:
+          'Você preferiria nunca mais precisar dormir ou nunca mais precisar comer?',
+        french:
+          'Préféreriez-vous ne plus jamais avoir à dormir ou ne plus jamais avoir à manger ?',
+        spanish:
+          '¿Preferirías no tener que dormir nunca o no tener que comer nunca?',
       },
       {
         id: 'z5',
@@ -1441,7 +1489,7 @@ export const themes: Theme[] = [
         dutch: 'Zou je liever gedachten kunnen lezen of de toekomst zien?',
         english: 'Would you rather read minds or see the future?',
         portuguese: 'Você preferiria ler mentes ou ver o futuro?',
-        french: 'Préféreriez-vous lire dans les pensées ou voir l\'avenir ?',
+        french: "Préféreriez-vous lire dans les pensées ou voir l'avenir ?",
         spanish: '¿Preferirías leer mentes o ver el futuro?',
       },
       {
@@ -1449,7 +1497,8 @@ export const themes: Theme[] = [
         dutch: 'Zou je liever altijd warm of altijd koud hebben?',
         english: 'Would you rather always be warm or always be cold?',
         portuguese: 'Você preferiria ter sempre calor ou sempre frio?',
-        french: 'Préféreriez-vous toujours avoir chaud ou toujours avoir froid ?',
+        french:
+          'Préféreriez-vous toujours avoir chaud ou toujours avoir froid ?',
         spanish: '¿Preferirías tener siempre calor o siempre frío?',
       },
       {
@@ -1462,8 +1511,7 @@ export const themes: Theme[] = [
           'Você preferiria passar uma semana sem celular ou sem amigos?',
         french:
           'Préféreriez-vous passer une semaine sans téléphone ou sans amis ?',
-        spanish:
-          '¿Preferirías pasar una semana sin teléfono o sin amigos?',
+        spanish: '¿Preferirías pasar una semana sin teléfono o sin amigos?',
       },
       {
         id: 'z11',
@@ -1482,8 +1530,10 @@ export const themes: Theme[] = [
         id: 'z12',
         dutch: 'Zou je liever eeuwig leven of tien levens achter elkaar?',
         english: 'Would you rather live forever or live ten lives in a row?',
-        portuguese: 'Você preferiria viver eternamente ou viver dez vidas seguidas?',
-        french: 'Préféreriez-vous vivre éternellement ou vivre dix vies d\'affilée ?',
+        portuguese:
+          'Você preferiria viver eternamente ou viver dez vidas seguidas?',
+        french:
+          "Préféreriez-vous vivre éternellement ou vivre dix vies d'affilée ?",
         spanish: '¿Preferirías vivir eternamente o vivir diez vidas seguidas?',
       },
       {
@@ -1521,7 +1571,7 @@ export const themes: Theme[] = [
         portuguese:
           'Você preferiria ser o personagem principal de um filme de ação ou de uma comédia romântica?',
         french:
-          'Préféreriez-vous être le personnage principal d\'un film d\'action ou d\'une comédie romantique ?',
+          "Préféreriez-vous être le personnage principal d'un film d'action ou d'une comédie romantique ?",
         spanish:
           '¿Preferirías ser el personaje principal de una película de acción o de una comedia romántica?',
       },
@@ -1560,7 +1610,7 @@ export const themes: Theme[] = [
         portuguese:
           'Você preferiria passar um ano no espaço ou um ano no fundo do oceano?',
         french:
-          'Préféreriez-vous passer un an dans l\'espace ou un an au fond de l\'océan ?',
+          "Préféreriez-vous passer un an dans l'espace ou un an au fond de l'océan ?",
         spanish:
           '¿Preferirías pasar un año en el espacio o un año en el fondo del océano?',
       },
@@ -1569,7 +1619,8 @@ export const themes: Theme[] = [
         dutch: 'Zou je liever altijd geluk hebben of altijd gelijk hebben?',
         english: 'Would you rather always be lucky or always be right?',
         portuguese: 'Você preferiria ter sempre sorte ou sempre ter razão?',
-        french: 'Préféreriez-vous toujours avoir de la chance ou toujours avoir raison ?',
+        french:
+          'Préféreriez-vous toujours avoir de la chance ou toujours avoir raison ?',
         spanish: '¿Preferirías tener siempre suerte o tener siempre razón?',
       },
       {
@@ -1594,7 +1645,7 @@ export const themes: Theme[] = [
         portuguese:
           'Você preferiria saber tudo sobre o passado ou tudo sobre o futuro?',
         french:
-          'Préféreriez-vous tout savoir sur le passé ou tout sur l\'avenir ?',
+          "Préféreriez-vous tout savoir sur le passé ou tout sur l'avenir ?",
         spanish:
           '¿Preferirías saberlo todo sobre el pasado o todo sobre el futuro?',
       },
@@ -1630,7 +1681,8 @@ export const themes: Theme[] = [
           'Zou je liever kunnen teleporteren of de tijd kunnen stilzetten?',
         english: 'Would you rather be able to teleport or stop time?',
         portuguese: 'Você preferiria poder se teleportar ou parar o tempo?',
-        french: 'Préféreriez-vous pouvoir vous téléporter ou arrêter le temps ?',
+        french:
+          'Préféreriez-vous pouvoir vous téléporter ou arrêter le temps ?',
         spanish: '¿Preferirías poder teletransportarte o detener el tiempo?',
       },
       {
@@ -1702,8 +1754,10 @@ export const themes: Theme[] = [
         id: 'z30',
         dutch: 'Zou je liever oneindig geduld hebben of oneindige energie?',
         english: 'Would you rather have infinite patience or infinite energy?',
-        portuguese: 'Você preferiria ter paciência infinita ou energia infinita?',
-        french: 'Préféreriez-vous avoir une patience infinie ou une énergie infinie ?',
+        portuguese:
+          'Você preferiria ter paciência infinita ou energia infinita?',
+        french:
+          'Préféreriez-vous avoir une patience infinie ou une énergie infinie ?',
         spanish: '¿Preferirías tener paciencia infinita o energía infinita?',
       },
     ],

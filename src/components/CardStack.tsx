@@ -281,7 +281,7 @@ export default function CardStack({ theme, favorites, onToggleFavorite, cardThem
           onClick={handleNextButton}
           disabled={effectiveIndex >= cards.length}
           whileTap={{ scale: 0.9 }}
-          style={{ background: theme.gradient, color: '#fff', borderColor: 'transparent' }}
+          style={{ background: theme.gradient, color: '#fff', border: 'none' }}
           aria-label={t('nextCard')}
         >
           <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
