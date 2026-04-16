@@ -9,9 +9,10 @@ export default defineConfig({
       registerType: 'autoUpdate',
       includeAssets: ['favicon.svg', 'apple-touch-icon.png'],
       manifest: {
-        name: 'Gespreksstarters',
-        short_name: 'Gespreksstarters',
-        description: 'Gespreksstarters kaartspel - ontdek nieuwe gespreksonderwerpen!',
+        name: 'Conversation Starters',
+        short_name: 'Conversation Starters',
+        description:
+          'Conversation card game - discover new topics to talk about with your friends!',
         theme_color: '#6366f1',
         background_color: '#fafaf9',
         display: 'standalone',
