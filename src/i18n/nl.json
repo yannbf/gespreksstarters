@@ -16,11 +16,11 @@
   "changeLanguage": "Taal wijzigen",
   "favorites": "Favorieten",
   "themes": {
-    "luchtig": "Luchtig",
-    "diepgaand": "Diepgaand",
-    "relaties": "Relaties",
-    "dromen": "Dromen & Doelen",
-    "herinneringen": "Herinneringen",
-    "zou-je-liever": "Zou je liever"
+    "lighthearted": "Luchtig",
+    "deep": "Diepgaand",
+    "relationships": "Relaties",
+    "dreams": "Dromen & Doelen",
+    "memories": "Herinneringen",
+    "would-you-rather": "Zou je liever"
   }
 }

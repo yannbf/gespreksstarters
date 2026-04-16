@@ -65,7 +65,7 @@ export default function Card({ card, theme, isFlipped, isFavorite, onToggleFavor
         <div
           className="card-face card-back"
           style={{
-            background: 'linear-gradient(135deg, #1a1a2e 0%, #16213e 50%, #0f3460 100%)',
+            background: 'linear-gradient(135deg, #1a1a2e 0%, #1e2c54 60%, #123d72 100%)',
           }}
         >
           <div className="card-decoration">

@@ -16,11 +16,11 @@
   "changeLanguage": "Change language",
   "favorites": "Favorites",
   "themes": {
-    "luchtig": "Light",
-    "diepgaand": "Deep",
-    "relaties": "Relationships",
-    "dromen": "Dreams & Goals",
-    "herinneringen": "Memories",
-    "zou-je-liever": "Would You Rather"
+    "lighthearted": "Light",
+    "deep": "Deep",
+    "relationships": "Relationships",
+    "dreams": "Dreams & Goals",
+    "memories": "Memories",
+    "would-you-rather": "Would You Rather"
   }
 }

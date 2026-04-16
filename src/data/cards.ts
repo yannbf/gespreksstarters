@@ -18,7 +18,7 @@ export interface Theme {
 
 export const themes: Theme[] = [
   {
-    id: 'luchtig',
+    id: 'lighthearted',
     name: 'Luchtig',
     emoji: '☀️',
     color: '#f59e0b',
@@ -283,7 +283,7 @@ export const themes: Theme[] = [
     ],
   },
   {
-    id: 'diepgaand',
+    id: 'deep',
     name: 'Diepgaand',
     emoji: '🌊',
     color: '#6366f1',
@@ -559,7 +559,7 @@ export const themes: Theme[] = [
     ],
   },
   {
-    id: 'relaties',
+    id: 'relationships',
     name: 'Relaties',
     emoji: '💕',
     color: '#ec4899',
@@ -826,7 +826,7 @@ export const themes: Theme[] = [
     ],
   },
   {
-    id: 'dromen',
+    id: 'dreams',
     name: 'Dromen & Doelen',
     emoji: '✨',
     color: '#10b981',
@@ -1089,11 +1089,11 @@ export const themes: Theme[] = [
     ],
   },
   {
-    id: 'herinneringen',
+    id: 'memories',
     name: 'Herinneringen',
     emoji: '📸',
-    color: '#8b5cf6',
-    gradient: 'linear-gradient(135deg, #8b5cf6 0%, #a78bfa 50%, #c4b5fd 100%)',
+    color: '#3b82f6',
+    gradient: 'linear-gradient(135deg, #1e3a5f 0%, #3b82f6 50%, #93c5fd 100%)',
     cards: [
       {
         id: 'h1',
@@ -1369,7 +1369,7 @@ export const themes: Theme[] = [
     ],
   },
   {
-    id: 'zou-je-liever',
+    id: 'would-you-rather',
     name: 'Zou je liever',
     emoji: '🤔',
     color: '#ef4444',

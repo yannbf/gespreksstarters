@@ -16,11 +16,11 @@
   "changeLanguage": "Changer de langue",
   "favorites": "Favoris",
   "themes": {
-    "luchtig": "Léger",
-    "diepgaand": "Profond",
-    "relaties": "Relations",
-    "dromen": "Rêves & Objectifs",
-    "herinneringen": "Souvenirs",
-    "zou-je-liever": "Tu Préfères"
+    "lighthearted": "Léger",
+    "deep": "Profond",
+    "relationships": "Relations",
+    "dreams": "Rêves & Objectifs",
+    "memories": "Souvenirs",
+    "would-you-rather": "Tu Préfères"
   }
 }
